@@ -1,0 +1,2272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>813</width>
+    <height>670</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="FrameSup">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(0, 139, 0);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <property name="spacing">
+        <number>2</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="pushButtonHamburguesa">
+         <property name="minimumSize">
+          <size>
+           <width>90</width>
+           <height>90</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+background-color:rgb(221, 37, 13);
+
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover{
+border:2px solid #000000;
+
+
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>Iconos/hamburguesa.png</normaloff>Iconos/hamburguesa.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonComandas">
+         <property name="minimumSize">
+          <size>
+           <width>90</width>
+           <height>90</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+background-color:rgba(0, 0, 0,0%);
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover{
+background-color:rgb(255, 255, 255);
+}</string>
+         </property>
+         <property name="text">
+          <string>Comandas</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>Iconos/Comanda.png</normaloff>Iconos/Comanda.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>50</width>
+           <height>50</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonPlatillos">
+         <property name="minimumSize">
+          <size>
+           <width>90</width>
+           <height>90</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+background-color:rgba(0, 0, 0,0%);
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover{
+background-color:rgb(255, 255, 255);
+}</string>
+         </property>
+         <property name="text">
+          <string>Platillos</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>Iconos/platillo.png</normaloff>Iconos/platillo.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>50</width>
+           <height>50</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonCompras">
+         <property name="minimumSize">
+          <size>
+           <width>90</width>
+           <height>90</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+background-color:rgba(0, 0, 0,0%);
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover{
+background-color:rgb(255, 255, 255);
+}
+
+</string>
+         </property>
+         <property name="text">
+          <string>Compras</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>Iconos/compra.png</normaloff>Iconos/compra.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>50</width>
+           <height>50</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonInsumos">
+         <property name="minimumSize">
+          <size>
+           <width>90</width>
+           <height>90</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+background-color:rgba(0, 0, 0,0%);
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover{
+background-color:rgb(255, 255, 255);
+}</string>
+         </property>
+         <property name="text">
+          <string>Insumos</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>Iconos/Insumo.png</normaloff>Iconos/Insumo.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>50</width>
+           <height>50</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonEmpleados">
+         <property name="minimumSize">
+          <size>
+           <width>90</width>
+           <height>90</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+background-color:rgba(0, 0, 0,0%);
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover{
+background-color:rgb(255, 255, 255);
+}</string>
+         </property>
+         <property name="text">
+          <string>Empleados</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>Iconos/Empleado.png</normaloff>Iconos/Empleado.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>50</width>
+           <height>50</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonProveedores">
+         <property name="minimumSize">
+          <size>
+           <width>90</width>
+           <height>90</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+background-color:rgba(0, 0, 0,0%);
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover{
+background-color:rgb(255, 255, 255);
+}</string>
+         </property>
+         <property name="text">
+          <string>Proveedores</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>Iconos/Proveedor.png</normaloff>Iconos/Proveedor.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>50</width>
+           <height>50</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="FrameInf">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="Paginas">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QStackedWidget" name="stackedWidget">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="currentIndex">
+             <number>4</number>
+            </property>
+            <widget class="QWidget" name="Inicio">
+             <layout class="QGridLayout" name="gridLayout">
+              <item row="1" column="1">
+               <spacer name="verticalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="2" column="1">
+               <spacer name="verticalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>152</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="1">
+               <spacer name="verticalSpacer_5">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLabel" name="Fondo">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap>Iconos/puntoventa.png</pixmap>
+                </property>
+                <property name="scaledContents">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="2">
+               <spacer name="horizontalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>76</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="3" column="0">
+               <spacer name="horizontalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>77</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="4" column="1">
+               <spacer name="verticalSpacer_6">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="5" column="1">
+               <spacer name="verticalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="6" column="1">
+               <spacer name="verticalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>151</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="Comandas">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <item>
+               <widget class="QTabWidget" name="tab_Comandas">
+                <property name="styleSheet">
+                 <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+
+
+</string>
+                </property>
+                <property name="currentIndex">
+                 <number>1</number>
+                </property>
+                <widget class="QWidget" name="RegistrarComanda">
+                 <property name="styleSheet">
+                  <string notr="true">
+</string>
+                 </property>
+                 <attribute name="title">
+                  <string>Registrar comanda</string>
+                 </attribute>
+                </widget>
+                <widget class="QWidget" name="BuscarComanda">
+                 <attribute name="title">
+                  <string>Buscar comanda</string>
+                 </attribute>
+                </widget>
+                <widget class="QWidget" name="ConsultarComanda">
+                 <attribute name="title">
+                  <string>Listado comandas</string>
+                 </attribute>
+                </widget>
+                <widget class="QWidget" name="ModificarComanda">
+                 <attribute name="title">
+                  <string>Modificar comanda</string>
+                 </attribute>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="Platillos">
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <widget class="QTabWidget" name="tab_Platillos">
+                <property name="styleSheet">
+                 <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
+                <property name="currentIndex">
+                 <number>0</number>
+                </property>
+                <widget class="QWidget" name="RegistrarPlatillo">
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <attribute name="title">
+                  <string>Registrar platillo</string>
+                 </attribute>
+                </widget>
+                <widget class="QWidget" name="BuscarPlatillo">
+                 <attribute name="title">
+                  <string>Buscar platillo</string>
+                 </attribute>
+                </widget>
+                <widget class="QWidget" name="ConsultarPlatillo">
+                 <attribute name="title">
+                  <string>Listado platillo</string>
+                 </attribute>
+                </widget>
+                <widget class="QWidget" name="ModificarPlatillo">
+                 <attribute name="title">
+                  <string>Modificar platillo</string>
+                 </attribute>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="Compras">
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item>
+               <widget class="QTabWidget" name="tab_Compras">
+                <property name="styleSheet">
+                 <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
+                <property name="currentIndex">
+                 <number>1</number>
+                </property>
+                <widget class="QWidget" name="RegistrarCompra">
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <attribute name="title">
+                  <string>Registrar compra</string>
+                 </attribute>
+                </widget>
+                <widget class="QWidget" name="BuscarCompra">
+                 <attribute name="title">
+                  <string>Buscar compra</string>
+                 </attribute>
+                </widget>
+                <widget class="QWidget" name="ConsultarCompra">
+                 <attribute name="title">
+                  <string>Listado compra</string>
+                 </attribute>
+                </widget>
+                <widget class="QWidget" name="ModificarCompra">
+                 <attribute name="title">
+                  <string>Modificar compra</string>
+                 </attribute>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="Insumos">
+             <layout class="QGridLayout" name="gridLayout_7">
+              <item row="1" column="0">
+               <widget class="QTabWidget" name="tab_Insumo">
+                <property name="styleSheet">
+                 <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
+                <property name="currentIndex">
+                 <number>3</number>
+                </property>
+                <widget class="QWidget" name="RegistrarInsumo">
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <attribute name="title">
+                  <string>Registrar insumo</string>
+                 </attribute>
+                 <layout class="QVBoxLayout" name="verticalLayout_6">
+                  <item>
+                   <widget class="QGroupBox" name="groupBoxInsumo">
+                    <property name="title">
+                     <string/>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_2">
+                     <property name="verticalSpacing">
+                      <number>10</number>
+                     </property>
+                     <item row="2" column="3">
+                      <widget class="QLineEdit" name="lineEdit_Nombre_Insumo"/>
+                     </item>
+                     <item row="5" column="3">
+                      <widget class="QPushButton" name="pushButton_Registrar_Inusmo">
+                       <property name="text">
+                        <string>Registrar nuevo insumo</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="3">
+                      <widget class="QDoubleSpinBox" name="SpinBoxExistencia"/>
+                     </item>
+                     <item row="3" column="0">
+                      <spacer name="horizontalSpacer_4">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="4" column="1" colspan="2">
+                      <widget class="QLabel" name="label_Descripcion">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Descripcion:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="3">
+                      <widget class="QTextEdit" name="textEdit_Descripcion"/>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QLabel" name="label_ID">
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);
+</string>
+                       </property>
+                       <property name="text">
+                        <string>ID:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="1" colspan="2">
+                      <widget class="QLabel" name="label_Existencia">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Existencias:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="3">
+                      <widget class="QLabel" name="ID_Insumo">
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);</string>
+                       </property>
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="1" colspan="2">
+                      <widget class="QLabel" name="label_Nombre_Insumo">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Nombre del insumo:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="4">
+                      <spacer name="horizontalSpacer_5">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="0" column="3">
+                      <widget class="QLabel" name="label_Titulo_Registrar">
+                       <property name="minimumSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>1500</width>
+                         <height>200</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 36pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="lineWidth">
+                        <number>-1</number>
+                       </property>
+                       <property name="text">
+                        <string>Registrar Nuevo Insumo</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="BuscarInsumo">
+                 <attribute name="title">
+                  <string>Buscar insumo</string>
+                 </attribute>
+                 <layout class="QGridLayout" name="gridLayout_8">
+                  <property name="verticalSpacing">
+                   <number>10</number>
+                  </property>
+                  <item row="0" column="4">
+                   <spacer name="horizontalSpacer_16">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="3" column="4">
+                   <widget class="QPushButton" name="pushButton_Buscar_Insumo">
+                    <property name="text">
+                     <string>Buscar</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1" colspan="2">
+                   <widget class="QLabel" name="label_Titutlo_Busqueda">
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>1500</width>
+                      <height>200</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 36pt &quot;MS Shell Dlg 2&quot;;</string>
+                    </property>
+                    <property name="lineWidth">
+                     <number>-1</number>
+                    </property>
+                    <property name="text">
+                     <string>Busqueda de insumo por ID</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0" colspan="3">
+                   <widget class="QLineEdit" name="lineEdit_Buscar_Insumo">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="placeholderText">
+                     <string>Ingrese el Identificador del insumo</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_3">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="1" column="0" colspan="5">
+                   <widget class="QTableWidget" name="tabla_Buscar_Insumo"/>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="ConsultarInsumo">
+                 <attribute name="title">
+                  <string>Listado insumo</string>
+                 </attribute>
+                 <layout class="QGridLayout" name="gridLayout_9">
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_18">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>168</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLabel" name="Titulo_Consultar_Insumo">
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>1500</width>
+                      <height>200</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 36pt &quot;MS Shell Dlg 2&quot;;</string>
+                    </property>
+                    <property name="lineWidth">
+                     <number>-1</number>
+                    </property>
+                    <property name="text">
+                     <string>Listado de Insumos</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <spacer name="horizontalSpacer_17">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>168</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="1" column="0" colspan="3">
+                   <widget class="QTableWidget" name="tabla_Consultar_Insumo"/>
+                  </item>
+                  <item row="2" column="2">
+                   <widget class="QPushButton" name="pushButton_Limiar_Insumo">
+                    <property name="text">
+                     <string>Limpiar</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QPushButton" name="pushButton_Mostrar_Insumos">
+                    <property name="text">
+                     <string>Mostrar</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="ModificarInsumo">
+                 <attribute name="title">
+                  <string>Modificar insumo</string>
+                 </attribute>
+                 <layout class="QGridLayout" name="gridLayout_11">
+                  <item row="0" column="0">
+                   <widget class="QGroupBox" name="groupBox_4">
+                    <property name="title">
+                     <string/>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_10">
+                     <property name="verticalSpacing">
+                      <number>10</number>
+                     </property>
+                     <item row="4" column="1" colspan="2">
+                      <widget class="QLabel" name="label_Nombre_Insumo_2">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Nombre del insumo:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="0">
+                      <spacer name="horizontalSpacer_19">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="3" column="1">
+                      <widget class="QLabel" name="label_ID_2">
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);
+</string>
+                       </property>
+                       <property name="text">
+                        <string>ID:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="3">
+                      <widget class="QDoubleSpinBox" name="SpinBox_Existencia_2"/>
+                     </item>
+                     <item row="6" column="3">
+                      <widget class="QTextEdit" name="textEdit_Descripcion_2"/>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QPushButton" name="pushButton_Buscar_Insum_2">
+                       <property name="text">
+                        <string>Buscar</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="2" colspan="2">
+                      <widget class="QLineEdit" name="lineEdit_Buscar_Insumo_5">
+                       <property name="placeholderText">
+                        <string>Ingrese el Identificador del insumo</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="4">
+                      <spacer name="horizontalSpacer_20">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="3" column="3">
+                      <widget class="QLabel" name="ID_Modificar_Insumo">
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);</string>
+                       </property>
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="3">
+                      <widget class="QLineEdit" name="lineEdit_Nombre_Insumo_2"/>
+                     </item>
+                     <item row="6" column="1" colspan="2">
+                      <widget class="QLabel" name="label_Descripcion_2">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Descripcion:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="7" column="3">
+                      <widget class="QPushButton" name="pushButton_Modificar_Inusmo">
+                       <property name="text">
+                        <string>Guardar cambios</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="3">
+                      <widget class="QLabel" name="label_2">
+                       <property name="minimumSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>1500</width>
+                         <height>200</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 36pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="lineWidth">
+                        <number>-1</number>
+                       </property>
+                       <property name="text">
+                        <string>Modificar Insumo</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="1" colspan="2">
+                      <widget class="QLabel" name="label_Existencia_2">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Existencias:</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="Empleados">
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <item>
+               <widget class="QTabWidget" name="tab_Empleados">
+                <property name="styleSheet">
+                 <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
+                <property name="currentIndex">
+                 <number>1</number>
+                </property>
+                <widget class="QWidget" name="RegistrarEmpleado">
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <attribute name="title">
+                  <string>Registrar empleado</string>
+                 </attribute>
+                 <layout class="QVBoxLayout" name="verticalLayout_7">
+                  <item>
+                   <widget class="QGroupBox" name="groupBox_2">
+                    <property name="title">
+                     <string/>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_5">
+                     <property name="verticalSpacing">
+                      <number>10</number>
+                     </property>
+                     <item row="7" column="4">
+                      <widget class="QPushButton" name="pushButton_Registrar_Empleado">
+                       <property name="text">
+                        <string>Registrar nuevo insumo</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="1" colspan="2">
+                      <widget class="QLabel" name="label_18">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Cargo:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QLabel" name="label_17">
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);
+</string>
+                       </property>
+                       <property name="text">
+                        <string>ID:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="4">
+                      <widget class="QComboBox" name="comboBox_Estatus_Empleado">
+                       <item>
+                        <property name="text">
+                         <string>Activo</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Inactivo</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                     <item row="8" column="4">
+                      <spacer name="verticalSpacer_8">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>40</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="0" column="4">
+                      <widget class="QLabel" name="label_20">
+                       <property name="minimumSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>1500</width>
+                         <height>200</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 36pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="lineWidth">
+                        <number>-1</number>
+                       </property>
+                       <property name="text">
+                        <string>Registrar Nuevo Empleado</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="0">
+                      <spacer name="horizontalSpacer_12">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="2" column="4">
+                      <widget class="QLabel" name="ID_Empleado">
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);</string>
+                       </property>
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="1">
+                      <widget class="QLabel" name="label_21">
+                       <property name="text">
+                        <string>Estatus</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="5">
+                      <spacer name="horizontalSpacer_14">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="6" column="1" colspan="2">
+                      <widget class="QLabel" name="label_16">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Telefono:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="1" colspan="2">
+                      <widget class="QLabel" name="label_19">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Nombre:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="4">
+                      <widget class="QLineEdit" name="lineEdit_Telefono_Empleado"/>
+                     </item>
+                     <item row="4" column="4">
+                      <widget class="QComboBox" name="comboBox_Cargo_Empleado">
+                       <item>
+                        <property name="text">
+                         <string>Gerente</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Cajero</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Repartidor</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Cocinero</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                     <item row="3" column="4">
+                      <widget class="QLineEdit" name="lineEdit_Nombre_Empleado"/>
+                     </item>
+                     <item row="1" column="4">
+                      <spacer name="verticalSpacer_7">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>40</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="BuscarEmpleado">
+                 <attribute name="title">
+                  <string>Buscar empleado</string>
+                 </attribute>
+                 <layout class="QGridLayout" name="gridLayout_12">
+                  <item row="0" column="2">
+                   <spacer name="horizontalSpacer_21">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>72</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="2" column="2">
+                   <widget class="QPushButton" name="pushButton_Buscar_Empleado">
+                    <property name="text">
+                     <string>Buscar</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_22">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>30</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="2" column="0" colspan="2">
+                   <widget class="QLineEdit" name="lineEdit_Buscar_Empleado">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="placeholderText">
+                     <string>Ingrese el Identificador del Empleado</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0" colspan="3">
+                   <widget class="QTableWidget" name="tabla_Buscar_Empleado"/>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLabel" name="label_5">
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>1500</width>
+                      <height>200</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 36pt &quot;MS Shell Dlg 2&quot;;</string>
+                    </property>
+                    <property name="lineWidth">
+                     <number>-1</number>
+                    </property>
+                    <property name="text">
+                     <string>Busqueda de Empleado por ID</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="ConsultarEmpleado">
+                 <attribute name="title">
+                  <string>Listado empleado</string>
+                 </attribute>
+                 <layout class="QGridLayout" name="gridLayout_14">
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_25">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>144</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLabel" name="label_28">
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>1500</width>
+                      <height>200</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 36pt &quot;MS Shell Dlg 2&quot;;</string>
+                    </property>
+                    <property name="lineWidth">
+                     <number>-1</number>
+                    </property>
+                    <property name="text">
+                     <string>Listado de Empleados</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <spacer name="horizontalSpacer_24">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>143</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="1" column="0" colspan="3">
+                   <widget class="QTableWidget" name="tabla_Consultar_Empleado"/>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QPushButton" name="pushButton_Mostrar_Empleado">
+                    <property name="text">
+                     <string>Mostrar</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="2">
+                   <widget class="QPushButton" name="pushButton_Limiar_Empleado">
+                    <property name="text">
+                     <string>Limpiar</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="ModificarEmpleado">
+                 <attribute name="title">
+                  <string>Modificar empleado</string>
+                 </attribute>
+                 <layout class="QGridLayout" name="gridLayout_56">
+                  <item row="0" column="0">
+                   <widget class="QGroupBox" name="groupBox_19">
+                    <property name="title">
+                     <string/>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_55">
+                     <property name="verticalSpacing">
+                      <number>10</number>
+                     </property>
+                     <item row="3" column="4">
+                      <widget class="QLabel" name="ID_Modificar_Empleado">
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);</string>
+                       </property>
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="1" colspan="2">
+                      <widget class="QLabel" name="label_95">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Cargo:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="7" column="1" colspan="2">
+                      <widget class="QLabel" name="label_99">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Telefono:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="7" column="4">
+                      <widget class="QLineEdit" name="lineEdit_Telefono_Empleado_2"/>
+                     </item>
+                     <item row="5" column="0">
+                      <spacer name="horizontalSpacer_95">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="9" column="4">
+                      <spacer name="verticalSpacer_45">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>40</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="0" column="5">
+                      <spacer name="horizontalSpacer_96">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="3" column="1">
+                      <widget class="QLabel" name="label_96">
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);
+</string>
+                       </property>
+                       <property name="text">
+                        <string>ID:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="1" colspan="2">
+                      <widget class="QLabel" name="label_100">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Nombre:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="4">
+                      <widget class="QComboBox" name="comboBox_Cargo_Empleado_2">
+                       <item>
+                        <property name="text">
+                         <string>Gerente</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Cocinero</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Cajero</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Repartidor</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                     <item row="8" column="4">
+                      <widget class="QPushButton" name="pushButton_Modificar_Empleado">
+                       <property name="text">
+                        <string>Registrar nuevo insumo</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="4">
+                      <widget class="QComboBox" name="comboBox_Estatus_Empleado_2">
+                       <item>
+                        <property name="text">
+                         <string>Activo</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Inactivo</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                     <item row="0" column="4">
+                      <widget class="QLabel" name="label_97">
+                       <property name="minimumSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>1500</width>
+                         <height>200</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 36pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="lineWidth">
+                        <number>-1</number>
+                       </property>
+                       <property name="text">
+                        <string>Modificar Empleado</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="1">
+                      <widget class="QLabel" name="label_98">
+                       <property name="text">
+                        <string>Estatus</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="4">
+                      <widget class="QLineEdit" name="lineEdit_Nombre_Empleado_2"/>
+                     </item>
+                     <item row="1" column="4">
+                      <spacer name="verticalSpacer_46">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>40</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="2" column="4">
+                      <widget class="QLineEdit" name="lineEdit_Buscar_Empleado_m">
+                       <property name="placeholderText">
+                        <string>Ingrese el Identificador del Empleado</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QPushButton" name="pushButton_Buscar_Empleado_m">
+                       <property name="text">
+                        <string>Buscar</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="Proveedores">
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <item>
+               <widget class="QTabWidget" name="proveedor">
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
+                <property name="currentIndex">
+                 <number>0</number>
+                </property>
+                <widget class="QWidget" name="RegistrarProveedor">
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <attribute name="title">
+                  <string>Registrar proveedor</string>
+                 </attribute>
+                 <layout class="QVBoxLayout" name="verticalLayout_8">
+                  <item>
+                   <widget class="QGroupBox" name="groupBox_3">
+                    <property name="title">
+                     <string/>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_6">
+                     <property name="verticalSpacing">
+                      <number>10</number>
+                     </property>
+                     <item row="7" column="4">
+                      <spacer name="verticalSpacer_9">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>40</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="4" column="1" colspan="2">
+                      <widget class="QLabel" name="label_22">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Telefono:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="5">
+                      <spacer name="horizontalSpacer_15">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="5" column="1">
+                      <widget class="QLabel" name="label_25">
+                       <property name="text">
+                        <string>Estatus</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="4">
+                      <widget class="QLabel" name="label_24">
+                       <property name="minimumSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>1500</width>
+                         <height>200</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 36pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="lineWidth">
+                        <number>-1</number>
+                       </property>
+                       <property name="text">
+                        <string>Registrar Nuevo Proveedor</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="4">
+                      <widget class="QPushButton" name="pushButton_Registrar_Proveedor">
+                       <property name="text">
+                        <string>Registrar nuevo insumo</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="4">
+                      <widget class="QComboBox" name="comboBox_Estatus_Proveedor">
+                       <item>
+                        <property name="text">
+                         <string>Activo</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Inactivo</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                     <item row="2" column="4">
+                      <widget class="QLabel" name="ID_Proveedor">
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);</string>
+                       </property>
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="4">
+                      <spacer name="verticalSpacer_10">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>40</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QLabel" name="label_23">
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);
+</string>
+                       </property>
+                       <property name="text">
+                        <string>ID:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="0">
+                      <spacer name="horizontalSpacer_13">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="3" column="4">
+                      <widget class="QLineEdit" name="lineEdit_Nombre_Proveedor"/>
+                     </item>
+                     <item row="3" column="1" colspan="2">
+                      <widget class="QLabel" name="label_27">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Nombre:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="4">
+                      <widget class="QLineEdit" name="lineEdit_Telefono_Proveedor"/>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="BuscarProveedor">
+                 <attribute name="title">
+                  <string>Buscar proveedor</string>
+                 </attribute>
+                 <layout class="QGridLayout" name="gridLayout_13">
+                  <item row="0" column="1" colspan="2">
+                   <widget class="QLabel" name="label_26">
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>1500</width>
+                      <height>200</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 36pt &quot;MS Shell Dlg 2&quot;;</string>
+                    </property>
+                    <property name="lineWidth">
+                     <number>-1</number>
+                    </property>
+                    <property name="text">
+                     <string>Busqueda de Proveedor por ID</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0" colspan="4">
+                   <widget class="QTableWidget" name="tabla_Buscar_Proveedor"/>
+                  </item>
+                  <item row="0" column="3">
+                   <spacer name="horizontalSpacer_23">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>72</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_28">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>23</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="2" column="3">
+                   <widget class="QPushButton" name="pushButton_Buscar_Proveedor">
+                    <property name="text">
+                     <string>Buscar</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0" colspan="3">
+                   <widget class="QLineEdit" name="lineEdit_Buscar_Proveedor">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="placeholderText">
+                     <string>Ingrese el Identificador del Proveedor</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="ConsultarProveedor">
+                 <attribute name="title">
+                  <string>Listado proveedor</string>
+                 </attribute>
+                 <layout class="QGridLayout" name="gridLayout_15">
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_27">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>128</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLabel" name="label_29">
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>1500</width>
+                      <height>200</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 36pt &quot;MS Shell Dlg 2&quot;;</string>
+                    </property>
+                    <property name="lineWidth">
+                     <number>-1</number>
+                    </property>
+                    <property name="text">
+                     <string>Listado de Proveedores</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <spacer name="horizontalSpacer_26">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>128</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="1" column="0" colspan="3">
+                   <widget class="QTableWidget" name="tabla_Consultar_Proveedor"/>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QPushButton" name="pushButton_Mostrar_Proveedor">
+                    <property name="text">
+                     <string>Mostrar</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="2">
+                   <widget class="QPushButton" name="pushButton_Limiar_Proveedor">
+                    <property name="text">
+                     <string>Limpiar</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="ModificarProveedor">
+                 <attribute name="title">
+                  <string>Modificar proveedor</string>
+                 </attribute>
+                 <layout class="QGridLayout" name="gridLayout_58">
+                  <item row="0" column="0">
+                   <widget class="QGroupBox" name="groupBox_20">
+                    <property name="title">
+                     <string/>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_57">
+                     <property name="verticalSpacing">
+                      <number>10</number>
+                     </property>
+                     <item row="6" column="4">
+                      <widget class="QComboBox" name="comboBox_Estatus_Proveedor_2">
+                       <item>
+                        <property name="text">
+                         <string>Activo</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Inactivo</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                     <item row="3" column="4">
+                      <widget class="QLabel" name="ID_Modificar_Insumo_m">
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);</string>
+                       </property>
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="0">
+                      <spacer name="horizontalSpacer_98">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="3" column="1">
+                      <widget class="QLabel" name="label_104">
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);
+</string>
+                       </property>
+                       <property name="text">
+                        <string>ID:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="4">
+                      <spacer name="verticalSpacer_48">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>40</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="0" column="4">
+                      <widget class="QLabel" name="label_103">
+                       <property name="minimumSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>1500</width>
+                         <height>200</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 36pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="lineWidth">
+                        <number>-1</number>
+                       </property>
+                       <property name="text">
+                        <string>Modificar Proveedor</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="7" column="4">
+                      <widget class="QPushButton" name="pushButton_Modificar_Proveedor">
+                       <property name="text">
+                        <string>Registrar nuevo insumo</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="4">
+                      <widget class="QLineEdit" name="lineEdit_Telefono_Proveedor_2"/>
+                     </item>
+                     <item row="4" column="1" colspan="2">
+                      <widget class="QLabel" name="label_105">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Nombre:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="1" colspan="2">
+                      <widget class="QLabel" name="label_101">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Telefono:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="4">
+                      <widget class="QLineEdit" name="lineEdit_Nombre_Proveedor_2"/>
+                     </item>
+                     <item row="0" column="5">
+                      <spacer name="horizontalSpacer_97">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="6" column="1">
+                      <widget class="QLabel" name="label_102">
+                       <property name="text">
+                        <string>Estatus</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="8" column="4">
+                      <spacer name="verticalSpacer_47">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>40</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QPushButton" name="pushButton_Buscar_Proveedor_m">
+                       <property name="text">
+                        <string>Buscar</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="4">
+                      <widget class="QLineEdit" name="lineEdit_Buscar_Proveedor_m">
+                       <property name="placeholderText">
+                        <string>Ingrese el Identificador del Proveedor</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
