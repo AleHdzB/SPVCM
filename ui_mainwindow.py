@@ -17,13 +17,12 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(813, 670)
+        MainWindow.resize(798, 677)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.verticalLayout_2 = QVBoxLayout(self.centralwidget)
-        self.verticalLayout_2.setSpacing(0)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_3 = QGridLayout(self.centralwidget)
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
         self.FrameSup = QFrame(self.centralwidget)
         self.FrameSup.setObjectName(u"FrameSup")
         self.FrameSup.setMinimumSize(QSize(0, 100))
@@ -167,7 +166,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.addWidget(self.pushButtonProveedores)
 
 
-        self.verticalLayout_2.addWidget(self.FrameSup)
+        self.gridLayout_3.addWidget(self.FrameSup, 0, 0, 1, 1)
 
         self.FrameInf = QFrame(self.centralwidget)
         self.FrameInf.setObjectName(u"FrameInf")
@@ -470,15 +469,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_9.addWidget(self.tabla_Consultar_Insumo, 1, 0, 1, 3)
 
-        self.pushButton_Limiar_Insumo = QPushButton(self.ConsultarInsumo)
-        self.pushButton_Limiar_Insumo.setObjectName(u"pushButton_Limiar_Insumo")
-
-        self.gridLayout_9.addWidget(self.pushButton_Limiar_Insumo, 2, 2, 1, 1)
-
         self.pushButton_Mostrar_Insumos = QPushButton(self.ConsultarInsumo)
         self.pushButton_Mostrar_Insumos.setObjectName(u"pushButton_Mostrar_Insumos")
 
-        self.gridLayout_9.addWidget(self.pushButton_Mostrar_Insumos, 2, 0, 1, 1)
+        self.gridLayout_9.addWidget(self.pushButton_Mostrar_Insumos, 2, 1, 1, 1)
 
         self.tab_Insumo.addTab(self.ConsultarInsumo, "")
         self.ModificarInsumo = QWidget()
@@ -490,41 +484,6 @@ class Ui_MainWindow(object):
         self.gridLayout_10 = QGridLayout(self.groupBox_4)
         self.gridLayout_10.setObjectName(u"gridLayout_10")
         self.gridLayout_10.setVerticalSpacing(10)
-        self.label_2 = QLabel(self.groupBox_4)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setMinimumSize(QSize(30, 30))
-        self.label_2.setMaximumSize(QSize(1500, 200))
-        self.label_2.setStyleSheet(u"font: 75 36pt \"MS Shell Dlg 2\";")
-        self.label_2.setLineWidth(-1)
-        self.label_2.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-
-        self.gridLayout_10.addWidget(self.label_2, 0, 3, 1, 1)
-
-        self.pushButton_Modificar_Inusmo = QPushButton(self.groupBox_4)
-        self.pushButton_Modificar_Inusmo.setObjectName(u"pushButton_Modificar_Inusmo")
-
-        self.gridLayout_10.addWidget(self.pushButton_Modificar_Inusmo, 7, 3, 1, 1)
-
-        self.lineEdit_Buscar_Insumo_5 = QLineEdit(self.groupBox_4)
-        self.lineEdit_Buscar_Insumo_5.setObjectName(u"lineEdit_Buscar_Insumo_5")
-
-        self.gridLayout_10.addWidget(self.lineEdit_Buscar_Insumo_5, 1, 2, 1, 2)
-
-        self.horizontalSpacer_20 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.gridLayout_10.addItem(self.horizontalSpacer_20, 0, 4, 1, 1)
-
-        self.label_Existencia_2 = QLabel(self.groupBox_4)
-        self.label_Existencia_2.setObjectName(u"label_Existencia_2")
-        self.label_Existencia_2.setStyleSheet(u"font: 14pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_10.addWidget(self.label_Existencia_2, 5, 1, 1, 2)
-
-        self.lineEdit_Nombre_Insumo_2 = QLineEdit(self.groupBox_4)
-        self.lineEdit_Nombre_Insumo_2.setObjectName(u"lineEdit_Nombre_Insumo_2")
-
-        self.gridLayout_10.addWidget(self.lineEdit_Nombre_Insumo_2, 4, 3, 1, 1)
-
         self.label_Nombre_Insumo_2 = QLabel(self.groupBox_4)
         self.label_Nombre_Insumo_2.setObjectName(u"label_Nombre_Insumo_2")
         self.label_Nombre_Insumo_2.setStyleSheet(u"font: 14pt \"MS Shell Dlg 2\";")
@@ -535,13 +494,14 @@ class Ui_MainWindow(object):
 
         self.gridLayout_10.addItem(self.horizontalSpacer_19, 5, 0, 1, 1)
 
-        self.ID_Modificar_Insumo = QLabel(self.groupBox_4)
-        self.ID_Modificar_Insumo.setObjectName(u"ID_Modificar_Insumo")
-        self.ID_Modificar_Insumo.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
+        self.label_ID_2 = QLabel(self.groupBox_4)
+        self.label_ID_2.setObjectName(u"label_ID_2")
+        self.label_ID_2.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
 "text-decoration: underline;\n"
-"color:rgb(0, 170, 127);")
+"color:rgb(0, 170, 127);\n"
+"")
 
-        self.gridLayout_10.addWidget(self.ID_Modificar_Insumo, 3, 3, 1, 1)
+        self.gridLayout_10.addWidget(self.label_ID_2, 3, 1, 1, 1)
 
         self.SpinBox_Existencia_2 = QDoubleSpinBox(self.groupBox_4)
         self.SpinBox_Existencia_2.setObjectName(u"SpinBox_Existencia_2")
@@ -553,14 +513,32 @@ class Ui_MainWindow(object):
 
         self.gridLayout_10.addWidget(self.textEdit_Descripcion_2, 6, 3, 1, 1)
 
-        self.label_ID_2 = QLabel(self.groupBox_4)
-        self.label_ID_2.setObjectName(u"label_ID_2")
-        self.label_ID_2.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
-"text-decoration: underline;\n"
-"color:rgb(0, 170, 127);\n"
-"")
+        self.pushButton_Buscar_Insum_2 = QPushButton(self.groupBox_4)
+        self.pushButton_Buscar_Insum_2.setObjectName(u"pushButton_Buscar_Insum_2")
 
-        self.gridLayout_10.addWidget(self.label_ID_2, 3, 1, 1, 1)
+        self.gridLayout_10.addWidget(self.pushButton_Buscar_Insum_2, 1, 1, 1, 1)
+
+        self.lineEdit_Buscar_Insumo_5 = QLineEdit(self.groupBox_4)
+        self.lineEdit_Buscar_Insumo_5.setObjectName(u"lineEdit_Buscar_Insumo_5")
+
+        self.gridLayout_10.addWidget(self.lineEdit_Buscar_Insumo_5, 1, 2, 1, 2)
+
+        self.horizontalSpacer_20 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout_10.addItem(self.horizontalSpacer_20, 0, 4, 1, 1)
+
+        self.ID_Modificar_Insumo = QLabel(self.groupBox_4)
+        self.ID_Modificar_Insumo.setObjectName(u"ID_Modificar_Insumo")
+        self.ID_Modificar_Insumo.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"text-decoration: underline;\n"
+"color:rgb(0, 170, 127);")
+
+        self.gridLayout_10.addWidget(self.ID_Modificar_Insumo, 3, 3, 1, 1)
+
+        self.lineEdit_Nombre_Insumo_2 = QLineEdit(self.groupBox_4)
+        self.lineEdit_Nombre_Insumo_2.setObjectName(u"lineEdit_Nombre_Insumo_2")
+
+        self.gridLayout_10.addWidget(self.lineEdit_Nombre_Insumo_2, 4, 3, 1, 1)
 
         self.label_Descripcion_2 = QLabel(self.groupBox_4)
         self.label_Descripcion_2.setObjectName(u"label_Descripcion_2")
@@ -568,10 +546,26 @@ class Ui_MainWindow(object):
 
         self.gridLayout_10.addWidget(self.label_Descripcion_2, 6, 1, 1, 2)
 
-        self.pushButton_Buscar_Insum_2 = QPushButton(self.groupBox_4)
-        self.pushButton_Buscar_Insum_2.setObjectName(u"pushButton_Buscar_Insum_2")
+        self.pushButton_Modificar_Inusmo = QPushButton(self.groupBox_4)
+        self.pushButton_Modificar_Inusmo.setObjectName(u"pushButton_Modificar_Inusmo")
 
-        self.gridLayout_10.addWidget(self.pushButton_Buscar_Insum_2, 1, 1, 1, 1)
+        self.gridLayout_10.addWidget(self.pushButton_Modificar_Inusmo, 7, 3, 1, 1)
+
+        self.label_2 = QLabel(self.groupBox_4)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setMinimumSize(QSize(30, 30))
+        self.label_2.setMaximumSize(QSize(1500, 200))
+        self.label_2.setStyleSheet(u"font: 75 36pt \"MS Shell Dlg 2\";")
+        self.label_2.setLineWidth(-1)
+        self.label_2.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.gridLayout_10.addWidget(self.label_2, 0, 3, 1, 1)
+
+        self.label_Existencia_2 = QLabel(self.groupBox_4)
+        self.label_Existencia_2.setObjectName(u"label_Existencia_2")
+        self.label_Existencia_2.setStyleSheet(u"font: 14pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_10.addWidget(self.label_Existencia_2, 5, 1, 1, 2)
 
 
         self.gridLayout_11.addWidget(self.groupBox_4, 0, 0, 1, 1)
@@ -595,19 +589,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
         self.groupBox_2 = QGroupBox(self.RegistrarEmpleado)
         self.groupBox_2.setObjectName(u"groupBox_2")
-        self.gridLayout_5 = QGridLayout(self.groupBox_2)
-        self.gridLayout_5.setObjectName(u"gridLayout_5")
-        self.gridLayout_5.setVerticalSpacing(10)
-        self.pushButton_Registrar_Empleado = QPushButton(self.groupBox_2)
-        self.pushButton_Registrar_Empleado.setObjectName(u"pushButton_Registrar_Empleado")
-
-        self.gridLayout_5.addWidget(self.pushButton_Registrar_Empleado, 7, 4, 1, 1)
-
+        self.gridLayout_4 = QGridLayout(self.groupBox_2)
+        self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.label_18 = QLabel(self.groupBox_2)
         self.label_18.setObjectName(u"label_18")
         self.label_18.setStyleSheet(u"font: 14pt \"MS Shell Dlg 2\";")
 
-        self.gridLayout_5.addWidget(self.label_18, 4, 1, 1, 2)
+        self.gridLayout_4.addWidget(self.label_18, 3, 1, 1, 1)
 
         self.label_17 = QLabel(self.groupBox_2)
         self.label_17.setObjectName(u"label_17")
@@ -616,18 +604,36 @@ class Ui_MainWindow(object):
 "color:rgb(0, 170, 127);\n"
 "")
 
-        self.gridLayout_5.addWidget(self.label_17, 2, 1, 1, 1)
+        self.gridLayout_4.addWidget(self.label_17, 1, 1, 1, 1)
 
-        self.comboBox_Estatus_Empleado = QComboBox(self.groupBox_2)
-        self.comboBox_Estatus_Empleado.addItem("")
-        self.comboBox_Estatus_Empleado.addItem("")
-        self.comboBox_Estatus_Empleado.setObjectName(u"comboBox_Estatus_Empleado")
+        self.comboBox_Cargo_Empleado = QComboBox(self.groupBox_2)
+        self.comboBox_Cargo_Empleado.addItem("")
+        self.comboBox_Cargo_Empleado.addItem("")
+        self.comboBox_Cargo_Empleado.addItem("")
+        self.comboBox_Cargo_Empleado.addItem("")
+        self.comboBox_Cargo_Empleado.setObjectName(u"comboBox_Cargo_Empleado")
 
-        self.gridLayout_5.addWidget(self.comboBox_Estatus_Empleado, 5, 4, 1, 1)
+        self.gridLayout_4.addWidget(self.comboBox_Cargo_Empleado, 3, 3, 1, 1)
 
-        self.verticalSpacer_8 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.lineEdit_Nombre_Empleado = QLineEdit(self.groupBox_2)
+        self.lineEdit_Nombre_Empleado.setObjectName(u"lineEdit_Nombre_Empleado")
 
-        self.gridLayout_5.addItem(self.verticalSpacer_8, 8, 4, 1, 1)
+        self.gridLayout_4.addWidget(self.lineEdit_Nombre_Empleado, 2, 3, 1, 1)
+
+        self.label_16 = QLabel(self.groupBox_2)
+        self.label_16.setObjectName(u"label_16")
+        self.label_16.setStyleSheet(u"font: 14pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_4.addWidget(self.label_16, 5, 1, 1, 1)
+
+        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout_4.addItem(self.horizontalSpacer_6, 1, 0, 1, 1)
+
+        self.lineEdit_Telefono_Empleado = QLineEdit(self.groupBox_2)
+        self.lineEdit_Telefono_Empleado.setObjectName(u"lineEdit_Telefono_Empleado")
+
+        self.gridLayout_4.addWidget(self.lineEdit_Telefono_Empleado, 5, 3, 1, 1)
 
         self.label_20 = QLabel(self.groupBox_2)
         self.label_20.setObjectName(u"label_20")
@@ -637,11 +643,38 @@ class Ui_MainWindow(object):
         self.label_20.setLineWidth(-1)
         self.label_20.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.gridLayout_5.addWidget(self.label_20, 0, 4, 1, 1)
+        self.gridLayout_4.addWidget(self.label_20, 0, 3, 1, 1)
 
-        self.horizontalSpacer_12 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.pushButton_Registrar_Empleado = QPushButton(self.groupBox_2)
+        self.pushButton_Registrar_Empleado.setObjectName(u"pushButton_Registrar_Empleado")
 
-        self.gridLayout_5.addItem(self.horizontalSpacer_12, 4, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.pushButton_Registrar_Empleado, 6, 3, 1, 1)
+
+        self.comboBox_Estatus_Empleado = QComboBox(self.groupBox_2)
+        self.comboBox_Estatus_Empleado.addItem("")
+        self.comboBox_Estatus_Empleado.addItem("")
+        self.comboBox_Estatus_Empleado.setObjectName(u"comboBox_Estatus_Empleado")
+
+        self.gridLayout_4.addWidget(self.comboBox_Estatus_Empleado, 4, 3, 1, 1)
+
+        self.horizontalSpacer_7 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout_4.addItem(self.horizontalSpacer_7, 0, 4, 1, 1)
+
+        self.label_21 = QLabel(self.groupBox_2)
+        self.label_21.setObjectName(u"label_21")
+
+        self.gridLayout_4.addWidget(self.label_21, 4, 1, 1, 1)
+
+        self.label_19 = QLabel(self.groupBox_2)
+        self.label_19.setObjectName(u"label_19")
+        self.label_19.setStyleSheet(u"font: 14pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_4.addWidget(self.label_19, 2, 1, 1, 1)
+
+        self.verticalSpacer_7 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.gridLayout_4.addItem(self.verticalSpacer_7, 7, 3, 1, 1)
 
         self.ID_Empleado = QLabel(self.groupBox_2)
         self.ID_Empleado.setObjectName(u"ID_Empleado")
@@ -649,51 +682,7 @@ class Ui_MainWindow(object):
 "text-decoration: underline;\n"
 "color:rgb(0, 170, 127);")
 
-        self.gridLayout_5.addWidget(self.ID_Empleado, 2, 4, 1, 1)
-
-        self.label_21 = QLabel(self.groupBox_2)
-        self.label_21.setObjectName(u"label_21")
-
-        self.gridLayout_5.addWidget(self.label_21, 5, 1, 1, 1)
-
-        self.horizontalSpacer_14 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.gridLayout_5.addItem(self.horizontalSpacer_14, 0, 5, 1, 1)
-
-        self.label_16 = QLabel(self.groupBox_2)
-        self.label_16.setObjectName(u"label_16")
-        self.label_16.setStyleSheet(u"font: 14pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_5.addWidget(self.label_16, 6, 1, 1, 2)
-
-        self.label_19 = QLabel(self.groupBox_2)
-        self.label_19.setObjectName(u"label_19")
-        self.label_19.setStyleSheet(u"font: 14pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_5.addWidget(self.label_19, 3, 1, 1, 2)
-
-        self.lineEdit_Telefono_Empleado = QLineEdit(self.groupBox_2)
-        self.lineEdit_Telefono_Empleado.setObjectName(u"lineEdit_Telefono_Empleado")
-
-        self.gridLayout_5.addWidget(self.lineEdit_Telefono_Empleado, 6, 4, 1, 1)
-
-        self.comboBox_Cargo_Empleado = QComboBox(self.groupBox_2)
-        self.comboBox_Cargo_Empleado.addItem("")
-        self.comboBox_Cargo_Empleado.addItem("")
-        self.comboBox_Cargo_Empleado.addItem("")
-        self.comboBox_Cargo_Empleado.addItem("")
-        self.comboBox_Cargo_Empleado.setObjectName(u"comboBox_Cargo_Empleado")
-
-        self.gridLayout_5.addWidget(self.comboBox_Cargo_Empleado, 4, 4, 1, 1)
-
-        self.lineEdit_Nombre_Empleado = QLineEdit(self.groupBox_2)
-        self.lineEdit_Nombre_Empleado.setObjectName(u"lineEdit_Nombre_Empleado")
-
-        self.gridLayout_5.addWidget(self.lineEdit_Nombre_Empleado, 3, 4, 1, 1)
-
-        self.verticalSpacer_7 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout_5.addItem(self.verticalSpacer_7, 1, 4, 1, 1)
+        self.gridLayout_4.addWidget(self.ID_Empleado, 1, 3, 1, 1)
 
 
         self.verticalLayout_7.addWidget(self.groupBox_2)
@@ -767,12 +756,7 @@ class Ui_MainWindow(object):
         self.pushButton_Mostrar_Empleado = QPushButton(self.ConsultarEmpleado)
         self.pushButton_Mostrar_Empleado.setObjectName(u"pushButton_Mostrar_Empleado")
 
-        self.gridLayout_14.addWidget(self.pushButton_Mostrar_Empleado, 2, 0, 1, 1)
-
-        self.pushButton_Limiar_Empleado = QPushButton(self.ConsultarEmpleado)
-        self.pushButton_Limiar_Empleado.setObjectName(u"pushButton_Limiar_Empleado")
-
-        self.gridLayout_14.addWidget(self.pushButton_Limiar_Empleado, 2, 2, 1, 1)
+        self.gridLayout_14.addWidget(self.pushButton_Mostrar_Empleado, 2, 1, 1, 1)
 
         self.tab_Empleados.addTab(self.ConsultarEmpleado, "")
         self.ModificarEmpleado = QWidget()
@@ -903,10 +887,10 @@ class Ui_MainWindow(object):
         self.Proveedores.setObjectName(u"Proveedores")
         self.verticalLayout_5 = QVBoxLayout(self.Proveedores)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.proveedor = QTabWidget(self.Proveedores)
-        self.proveedor.setObjectName(u"proveedor")
-        self.proveedor.setMinimumSize(QSize(30, 30))
-        self.proveedor.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";")
+        self.tab_Proveedores = QTabWidget(self.Proveedores)
+        self.tab_Proveedores.setObjectName(u"tab_Proveedores")
+        self.tab_Proveedores.setMinimumSize(QSize(30, 30))
+        self.tab_Proveedores.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";")
         self.RegistrarProveedor = QWidget()
         self.RegistrarProveedor.setObjectName(u"RegistrarProveedor")
         self.RegistrarProveedor.setStyleSheet(u"")
@@ -1002,7 +986,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.groupBox_3)
 
-        self.proveedor.addTab(self.RegistrarProveedor, "")
+        self.tab_Proveedores.addTab(self.RegistrarProveedor, "")
         self.BuscarProveedor = QWidget()
         self.BuscarProveedor.setObjectName(u"BuscarProveedor")
         self.gridLayout_13 = QGridLayout(self.BuscarProveedor)
@@ -1040,7 +1024,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_13.addWidget(self.lineEdit_Buscar_Proveedor, 2, 0, 1, 3)
 
-        self.proveedor.addTab(self.BuscarProveedor, "")
+        self.tab_Proveedores.addTab(self.BuscarProveedor, "")
         self.ConsultarProveedor = QWidget()
         self.ConsultarProveedor.setObjectName(u"ConsultarProveedor")
         self.gridLayout_15 = QGridLayout(self.ConsultarProveedor)
@@ -1071,14 +1055,9 @@ class Ui_MainWindow(object):
         self.pushButton_Mostrar_Proveedor = QPushButton(self.ConsultarProveedor)
         self.pushButton_Mostrar_Proveedor.setObjectName(u"pushButton_Mostrar_Proveedor")
 
-        self.gridLayout_15.addWidget(self.pushButton_Mostrar_Proveedor, 2, 0, 1, 1)
+        self.gridLayout_15.addWidget(self.pushButton_Mostrar_Proveedor, 2, 1, 1, 1)
 
-        self.pushButton_Limiar_Proveedor = QPushButton(self.ConsultarProveedor)
-        self.pushButton_Limiar_Proveedor.setObjectName(u"pushButton_Limiar_Proveedor")
-
-        self.gridLayout_15.addWidget(self.pushButton_Limiar_Proveedor, 2, 2, 1, 1)
-
-        self.proveedor.addTab(self.ConsultarProveedor, "")
+        self.tab_Proveedores.addTab(self.ConsultarProveedor, "")
         self.ModificarProveedor = QWidget()
         self.ModificarProveedor.setObjectName(u"ModificarProveedor")
         self.gridLayout_58 = QGridLayout(self.ModificarProveedor)
@@ -1095,13 +1074,13 @@ class Ui_MainWindow(object):
 
         self.gridLayout_57.addWidget(self.comboBox_Estatus_Proveedor_2, 6, 4, 1, 1)
 
-        self.ID_Modificar_Insumo_m = QLabel(self.groupBox_20)
-        self.ID_Modificar_Insumo_m.setObjectName(u"ID_Modificar_Insumo_m")
-        self.ID_Modificar_Insumo_m.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
+        self.ID_Modficar_Proveedor = QLabel(self.groupBox_20)
+        self.ID_Modficar_Proveedor.setObjectName(u"ID_Modficar_Proveedor")
+        self.ID_Modficar_Proveedor.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
 "text-decoration: underline;\n"
 "color:rgb(0, 170, 127);")
 
-        self.gridLayout_57.addWidget(self.ID_Modificar_Insumo_m, 3, 4, 1, 1)
+        self.gridLayout_57.addWidget(self.ID_Modficar_Proveedor, 3, 4, 1, 1)
 
         self.horizontalSpacer_98 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -1183,9 +1162,9 @@ class Ui_MainWindow(object):
 
         self.gridLayout_58.addWidget(self.groupBox_20, 0, 0, 1, 1)
 
-        self.proveedor.addTab(self.ModificarProveedor, "")
+        self.tab_Proveedores.addTab(self.ModificarProveedor, "")
 
-        self.verticalLayout_5.addWidget(self.proveedor)
+        self.verticalLayout_5.addWidget(self.tab_Proveedores)
 
         self.stackedWidget.addWidget(self.Proveedores)
 
@@ -1195,19 +1174,19 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addWidget(self.Paginas)
 
 
-        self.verticalLayout_2.addWidget(self.FrameInf)
+        self.gridLayout_3.addWidget(self.FrameInf, 1, 0, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
 
         self.stackedWidget.setCurrentIndex(6)
-        self.tab_Comandas.setCurrentIndex(2)
+        self.tab_Comandas.setCurrentIndex(1)
         self.tab_Platillos.setCurrentIndex(0)
         self.tab_Compras.setCurrentIndex(1)
-        self.tab_Insumo.setCurrentIndex(3)
+        self.tab_Insumo.setCurrentIndex(0)
         self.tab_Empleados.setCurrentIndex(3)
-        self.proveedor.setCurrentIndex(3)
+        self.tab_Proveedores.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1240,7 +1219,7 @@ class Ui_MainWindow(object):
         self.label_Descripcion.setText(QCoreApplication.translate("MainWindow", u"Descripcion:", None))
         self.label_ID.setText(QCoreApplication.translate("MainWindow", u"ID:", None))
         self.label_Existencia.setText(QCoreApplication.translate("MainWindow", u"Existencias:", None))
-        self.ID_Insumo.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.ID_Insumo.setText(QCoreApplication.translate("MainWindow", u"-", None))
         self.label_Nombre_Insumo.setText(QCoreApplication.translate("MainWindow", u"Nombre del insumo:", None))
         self.label_Titulo_Registrar.setText(QCoreApplication.translate("MainWindow", u"Registrar Nuevo Insumo", None))
         self.tab_Insumo.setTabText(self.tab_Insumo.indexOf(self.RegistrarInsumo), QCoreApplication.translate("MainWindow", u"Registrar insumo", None))
@@ -1250,37 +1229,36 @@ class Ui_MainWindow(object):
         self.lineEdit_Buscar_Insumo.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese el Identificador del insumo", None))
         self.tab_Insumo.setTabText(self.tab_Insumo.indexOf(self.BuscarInsumo), QCoreApplication.translate("MainWindow", u"Buscar insumo", None))
         self.Titulo_Consultar_Insumo.setText(QCoreApplication.translate("MainWindow", u"Listado de Insumos", None))
-        self.pushButton_Limiar_Insumo.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
         self.pushButton_Mostrar_Insumos.setText(QCoreApplication.translate("MainWindow", u"Mostrar", None))
         self.tab_Insumo.setTabText(self.tab_Insumo.indexOf(self.ConsultarInsumo), QCoreApplication.translate("MainWindow", u"Listado insumo", None))
         self.groupBox_4.setTitle("")
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Modificar Insumo", None))
-        self.pushButton_Modificar_Inusmo.setText(QCoreApplication.translate("MainWindow", u"Guardar cambios", None))
-        self.lineEdit_Buscar_Insumo_5.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese el Identificador del insumo", None))
-        self.label_Existencia_2.setText(QCoreApplication.translate("MainWindow", u"Existencias:", None))
         self.label_Nombre_Insumo_2.setText(QCoreApplication.translate("MainWindow", u"Nombre del insumo:", None))
-        self.ID_Modificar_Insumo.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_ID_2.setText(QCoreApplication.translate("MainWindow", u"ID:", None))
-        self.label_Descripcion_2.setText(QCoreApplication.translate("MainWindow", u"Descripcion:", None))
         self.pushButton_Buscar_Insum_2.setText(QCoreApplication.translate("MainWindow", u"Buscar", None))
+        self.lineEdit_Buscar_Insumo_5.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese el Identificador del insumo", None))
+        self.ID_Modificar_Insumo.setText(QCoreApplication.translate("MainWindow", u"-", None))
+        self.label_Descripcion_2.setText(QCoreApplication.translate("MainWindow", u"Descripcion:", None))
+        self.pushButton_Modificar_Inusmo.setText(QCoreApplication.translate("MainWindow", u"Guardar cambios", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Modificar Insumo", None))
+        self.label_Existencia_2.setText(QCoreApplication.translate("MainWindow", u"Existencias:", None))
         self.tab_Insumo.setTabText(self.tab_Insumo.indexOf(self.ModificarInsumo), QCoreApplication.translate("MainWindow", u"Modificar insumo", None))
         self.groupBox_2.setTitle("")
-        self.pushButton_Registrar_Empleado.setText(QCoreApplication.translate("MainWindow", u"Registrar nuevo insumo", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Cargo:", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"ID:", None))
-        self.comboBox_Estatus_Empleado.setItemText(0, QCoreApplication.translate("MainWindow", u"Activo", None))
-        self.comboBox_Estatus_Empleado.setItemText(1, QCoreApplication.translate("MainWindow", u"Inactivo", None))
-
-        self.label_20.setText(QCoreApplication.translate("MainWindow", u"Registrar Nuevo Empleado", None))
-        self.ID_Empleado.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_21.setText(QCoreApplication.translate("MainWindow", u"Estatus", None))
-        self.label_16.setText(QCoreApplication.translate("MainWindow", u"Telefono:", None))
-        self.label_19.setText(QCoreApplication.translate("MainWindow", u"Nombre:", None))
         self.comboBox_Cargo_Empleado.setItemText(0, QCoreApplication.translate("MainWindow", u"Gerente", None))
         self.comboBox_Cargo_Empleado.setItemText(1, QCoreApplication.translate("MainWindow", u"Cajero", None))
         self.comboBox_Cargo_Empleado.setItemText(2, QCoreApplication.translate("MainWindow", u"Repartidor", None))
         self.comboBox_Cargo_Empleado.setItemText(3, QCoreApplication.translate("MainWindow", u"Cocinero", None))
 
+        self.label_16.setText(QCoreApplication.translate("MainWindow", u"Telefono:", None))
+        self.label_20.setText(QCoreApplication.translate("MainWindow", u"Registrar Nuevo Empleado", None))
+        self.pushButton_Registrar_Empleado.setText(QCoreApplication.translate("MainWindow", u"Registrar nuevo Empleado", None))
+        self.comboBox_Estatus_Empleado.setItemText(0, QCoreApplication.translate("MainWindow", u"Activo", None))
+        self.comboBox_Estatus_Empleado.setItemText(1, QCoreApplication.translate("MainWindow", u"Inactivo", None))
+
+        self.label_21.setText(QCoreApplication.translate("MainWindow", u"Estatus", None))
+        self.label_19.setText(QCoreApplication.translate("MainWindow", u"Nombre:", None))
+        self.ID_Empleado.setText(QCoreApplication.translate("MainWindow", u"-", None))
         self.tab_Empleados.setTabText(self.tab_Empleados.indexOf(self.RegistrarEmpleado), QCoreApplication.translate("MainWindow", u"Registrar empleado", None))
         self.pushButton_Buscar_Empleado.setText(QCoreApplication.translate("MainWindow", u"Buscar", None))
         self.lineEdit_Buscar_Empleado.setText("")
@@ -1289,10 +1267,9 @@ class Ui_MainWindow(object):
         self.tab_Empleados.setTabText(self.tab_Empleados.indexOf(self.BuscarEmpleado), QCoreApplication.translate("MainWindow", u"Buscar empleado", None))
         self.label_28.setText(QCoreApplication.translate("MainWindow", u"Listado de Empleados", None))
         self.pushButton_Mostrar_Empleado.setText(QCoreApplication.translate("MainWindow", u"Mostrar", None))
-        self.pushButton_Limiar_Empleado.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
         self.tab_Empleados.setTabText(self.tab_Empleados.indexOf(self.ConsultarEmpleado), QCoreApplication.translate("MainWindow", u"Listado empleado", None))
         self.groupBox_19.setTitle("")
-        self.ID_Modificar_Empleado.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.ID_Modificar_Empleado.setText(QCoreApplication.translate("MainWindow", u"-", None))
         self.label_95.setText(QCoreApplication.translate("MainWindow", u"Cargo:", None))
         self.label_99.setText(QCoreApplication.translate("MainWindow", u"Telefono:", None))
         self.label_96.setText(QCoreApplication.translate("MainWindow", u"ID:", None))
@@ -1302,7 +1279,7 @@ class Ui_MainWindow(object):
         self.comboBox_Cargo_Empleado_2.setItemText(2, QCoreApplication.translate("MainWindow", u"Cajero", None))
         self.comboBox_Cargo_Empleado_2.setItemText(3, QCoreApplication.translate("MainWindow", u"Repartidor", None))
 
-        self.pushButton_Modificar_Empleado.setText(QCoreApplication.translate("MainWindow", u"Registrar nuevo insumo", None))
+        self.pushButton_Modificar_Empleado.setText(QCoreApplication.translate("MainWindow", u"Guardar cambios", None))
         self.comboBox_Estatus_Empleado_2.setItemText(0, QCoreApplication.translate("MainWindow", u"Activo", None))
         self.comboBox_Estatus_Empleado_2.setItemText(1, QCoreApplication.translate("MainWindow", u"Inactivo", None))
 
@@ -1315,36 +1292,35 @@ class Ui_MainWindow(object):
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"Telefono:", None))
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"Estatus", None))
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"Registrar Nuevo Proveedor", None))
-        self.pushButton_Registrar_Proveedor.setText(QCoreApplication.translate("MainWindow", u"Registrar nuevo insumo", None))
+        self.pushButton_Registrar_Proveedor.setText(QCoreApplication.translate("MainWindow", u"Registrar nuevo Proveedor", None))
         self.comboBox_Estatus_Proveedor.setItemText(0, QCoreApplication.translate("MainWindow", u"Activo", None))
         self.comboBox_Estatus_Proveedor.setItemText(1, QCoreApplication.translate("MainWindow", u"Inactivo", None))
 
-        self.ID_Proveedor.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.ID_Proveedor.setText(QCoreApplication.translate("MainWindow", u"-", None))
         self.label_23.setText(QCoreApplication.translate("MainWindow", u"ID:", None))
         self.label_27.setText(QCoreApplication.translate("MainWindow", u"Nombre:", None))
-        self.proveedor.setTabText(self.proveedor.indexOf(self.RegistrarProveedor), QCoreApplication.translate("MainWindow", u"Registrar proveedor", None))
+        self.tab_Proveedores.setTabText(self.tab_Proveedores.indexOf(self.RegistrarProveedor), QCoreApplication.translate("MainWindow", u"Registrar proveedor", None))
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"Busqueda de Proveedor por ID", None))
         self.pushButton_Buscar_Proveedor.setText(QCoreApplication.translate("MainWindow", u"Buscar", None))
         self.lineEdit_Buscar_Proveedor.setText("")
         self.lineEdit_Buscar_Proveedor.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese el Identificador del Proveedor", None))
-        self.proveedor.setTabText(self.proveedor.indexOf(self.BuscarProveedor), QCoreApplication.translate("MainWindow", u"Buscar proveedor", None))
+        self.tab_Proveedores.setTabText(self.tab_Proveedores.indexOf(self.BuscarProveedor), QCoreApplication.translate("MainWindow", u"Buscar proveedor", None))
         self.label_29.setText(QCoreApplication.translate("MainWindow", u"Listado de Proveedores", None))
         self.pushButton_Mostrar_Proveedor.setText(QCoreApplication.translate("MainWindow", u"Mostrar", None))
-        self.pushButton_Limiar_Proveedor.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
-        self.proveedor.setTabText(self.proveedor.indexOf(self.ConsultarProveedor), QCoreApplication.translate("MainWindow", u"Listado proveedor", None))
+        self.tab_Proveedores.setTabText(self.tab_Proveedores.indexOf(self.ConsultarProveedor), QCoreApplication.translate("MainWindow", u"Listado proveedor", None))
         self.groupBox_20.setTitle("")
         self.comboBox_Estatus_Proveedor_2.setItemText(0, QCoreApplication.translate("MainWindow", u"Activo", None))
         self.comboBox_Estatus_Proveedor_2.setItemText(1, QCoreApplication.translate("MainWindow", u"Inactivo", None))
 
-        self.ID_Modificar_Insumo_m.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.ID_Modficar_Proveedor.setText(QCoreApplication.translate("MainWindow", u"-", None))
         self.label_104.setText(QCoreApplication.translate("MainWindow", u"ID:", None))
         self.label_103.setText(QCoreApplication.translate("MainWindow", u"Modificar Proveedor", None))
-        self.pushButton_Modificar_Proveedor.setText(QCoreApplication.translate("MainWindow", u"Registrar nuevo insumo", None))
+        self.pushButton_Modificar_Proveedor.setText(QCoreApplication.translate("MainWindow", u"Guardar cambios", None))
         self.label_105.setText(QCoreApplication.translate("MainWindow", u"Nombre:", None))
         self.label_101.setText(QCoreApplication.translate("MainWindow", u"Telefono:", None))
         self.label_102.setText(QCoreApplication.translate("MainWindow", u"Estatus", None))
         self.pushButton_Buscar_Proveedor_m.setText(QCoreApplication.translate("MainWindow", u"Buscar", None))
         self.lineEdit_Buscar_Proveedor_m.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese el Identificador del Proveedor", None))
-        self.proveedor.setTabText(self.proveedor.indexOf(self.ModificarProveedor), QCoreApplication.translate("MainWindow", u"Modificar proveedor", None))
+        self.tab_Proveedores.setTabText(self.tab_Proveedores.indexOf(self.ModificarProveedor), QCoreApplication.translate("MainWindow", u"Modificar proveedor", None))
     # retranslateUi
 

@@ -6,18 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>813</width>
-    <height>670</height>
+    <width>798</width>
+    <height>677</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <property name="spacing">
-     <number>0</number>
-    </property>
+   <layout class="QGridLayout" name="gridLayout_3">
     <property name="leftMargin">
      <number>0</number>
     </property>
@@ -30,7 +27,7 @@
     <property name="bottomMargin">
      <number>0</number>
     </property>
-    <item>
+    <item row="0" column="0">
      <widget class="QFrame" name="FrameSup">
       <property name="minimumSize">
        <size>
@@ -308,7 +305,7 @@ background-color:rgb(255, 255, 255);
       </layout>
      </widget>
     </item>
-    <item>
+    <item row="1" column="0">
      <widget class="QFrame" name="FrameInf">
       <property name="styleSheet">
        <string notr="true"/>
@@ -368,7 +365,7 @@ background-color:rgb(255, 255, 255);
              <string notr="true"/>
             </property>
             <property name="currentIndex">
-             <number>4</number>
+             <number>6</number>
             </property>
             <widget class="QWidget" name="Inicio">
              <layout class="QGridLayout" name="gridLayout">
@@ -509,8 +506,7 @@ background-color:rgb(255, 255, 255);
                 </property>
                 <widget class="QWidget" name="RegistrarComanda">
                  <property name="styleSheet">
-                  <string notr="true">
-</string>
+                  <string notr="true"/>
                  </property>
                  <attribute name="title">
                   <string>Registrar comanda</string>
@@ -617,7 +613,7 @@ background-color:rgb(255, 255, 255);
                  <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
                 </property>
                 <property name="currentIndex">
-                 <number>3</number>
+                 <number>0</number>
                 </property>
                 <widget class="QWidget" name="RegistrarInsumo">
                  <property name="styleSheet">
@@ -706,7 +702,7 @@ text-decoration: underline;
 color:rgb(0, 170, 127);</string>
                        </property>
                        <property name="text">
-                        <string>TextLabel</string>
+                        <string>-</string>
                        </property>
                       </widget>
                      </item>
@@ -912,14 +908,7 @@ color:rgb(0, 170, 127);</string>
                   <item row="1" column="0" colspan="3">
                    <widget class="QTableWidget" name="tabla_Consultar_Insumo"/>
                   </item>
-                  <item row="2" column="2">
-                   <widget class="QPushButton" name="pushButton_Limiar_Insumo">
-                    <property name="text">
-                     <string>Limpiar</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="0">
+                  <item row="2" column="1">
                    <widget class="QPushButton" name="pushButton_Mostrar_Insumos">
                     <property name="text">
                      <string>Mostrar</string>
@@ -1019,7 +1008,7 @@ text-decoration: underline;
 color:rgb(0, 170, 127);</string>
                        </property>
                        <property name="text">
-                        <string>TextLabel</string>
+                        <string>-</string>
                        </property>
                       </widget>
                      </item>
@@ -1098,7 +1087,7 @@ color:rgb(0, 170, 127);</string>
                  <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
                 </property>
                 <property name="currentIndex">
-                 <number>1</number>
+                 <number>3</number>
                 </property>
                 <widget class="QWidget" name="RegistrarEmpleado">
                  <property name="styleSheet">
@@ -1113,18 +1102,8 @@ color:rgb(0, 170, 127);</string>
                     <property name="title">
                      <string/>
                     </property>
-                    <layout class="QGridLayout" name="gridLayout_5">
-                     <property name="verticalSpacing">
-                      <number>10</number>
-                     </property>
-                     <item row="7" column="4">
-                      <widget class="QPushButton" name="pushButton_Registrar_Empleado">
-                       <property name="text">
-                        <string>Registrar nuevo insumo</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="4" column="1" colspan="2">
+                    <layout class="QGridLayout" name="gridLayout_4">
+                     <item row="3" column="1">
                       <widget class="QLabel" name="label_18">
                        <property name="styleSheet">
                         <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
@@ -1134,7 +1113,7 @@ color:rgb(0, 170, 127);</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="2" column="1">
+                     <item row="1" column="1">
                       <widget class="QLabel" name="label_17">
                        <property name="styleSheet">
                         <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
@@ -1147,34 +1126,60 @@ color:rgb(0, 170, 127);
                        </property>
                       </widget>
                      </item>
-                     <item row="5" column="4">
-                      <widget class="QComboBox" name="comboBox_Estatus_Empleado">
+                     <item row="3" column="3">
+                      <widget class="QComboBox" name="comboBox_Cargo_Empleado">
                        <item>
                         <property name="text">
-                         <string>Activo</string>
+                         <string>Gerente</string>
                         </property>
                        </item>
                        <item>
                         <property name="text">
-                         <string>Inactivo</string>
+                         <string>Cajero</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Repartidor</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Cocinero</string>
                         </property>
                        </item>
                       </widget>
                      </item>
-                     <item row="8" column="4">
-                      <spacer name="verticalSpacer_8">
+                     <item row="2" column="3">
+                      <widget class="QLineEdit" name="lineEdit_Nombre_Empleado"/>
+                     </item>
+                     <item row="5" column="1">
+                      <widget class="QLabel" name="label_16">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Telefono:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <spacer name="horizontalSpacer_6">
                        <property name="orientation">
-                        <enum>Qt::Vertical</enum>
+                        <enum>Qt::Horizontal</enum>
                        </property>
                        <property name="sizeHint" stdset="0">
                         <size>
-                         <width>20</width>
-                         <height>40</height>
+                         <width>40</width>
+                         <height>20</height>
                         </size>
                        </property>
                       </spacer>
                      </item>
-                     <item row="0" column="4">
+                     <item row="5" column="3">
+                      <widget class="QLineEdit" name="lineEdit_Telefono_Empleado"/>
+                     </item>
+                     <item row="0" column="3">
                       <widget class="QLabel" name="label_20">
                        <property name="minimumSize">
                         <size>
@@ -1202,8 +1207,29 @@ color:rgb(0, 170, 127);
                        </property>
                       </widget>
                      </item>
-                     <item row="4" column="0">
-                      <spacer name="horizontalSpacer_12">
+                     <item row="6" column="3">
+                      <widget class="QPushButton" name="pushButton_Registrar_Empleado">
+                       <property name="text">
+                        <string>Registrar nuevo Empleado</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="3">
+                      <widget class="QComboBox" name="comboBox_Estatus_Empleado">
+                       <item>
+                        <property name="text">
+                         <string>Activo</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Inactivo</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                     <item row="0" column="4">
+                      <spacer name="horizontalSpacer_7">
                        <property name="orientation">
                         <enum>Qt::Horizontal</enum>
                        </property>
@@ -1215,49 +1241,14 @@ color:rgb(0, 170, 127);
                        </property>
                       </spacer>
                      </item>
-                     <item row="2" column="4">
-                      <widget class="QLabel" name="ID_Empleado">
-                       <property name="styleSheet">
-                        <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
-text-decoration: underline;
-color:rgb(0, 170, 127);</string>
-                       </property>
-                       <property name="text">
-                        <string>TextLabel</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="5" column="1">
+                     <item row="4" column="1">
                       <widget class="QLabel" name="label_21">
                        <property name="text">
                         <string>Estatus</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="0" column="5">
-                      <spacer name="horizontalSpacer_14">
-                       <property name="orientation">
-                        <enum>Qt::Horizontal</enum>
-                       </property>
-                       <property name="sizeHint" stdset="0">
-                        <size>
-                         <width>40</width>
-                         <height>20</height>
-                        </size>
-                       </property>
-                      </spacer>
-                     </item>
-                     <item row="6" column="1" colspan="2">
-                      <widget class="QLabel" name="label_16">
-                       <property name="styleSheet">
-                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
-                       </property>
-                       <property name="text">
-                        <string>Telefono:</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="3" column="1" colspan="2">
+                     <item row="2" column="1">
                       <widget class="QLabel" name="label_19">
                        <property name="styleSheet">
                         <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
@@ -1267,37 +1258,7 @@ color:rgb(0, 170, 127);</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="6" column="4">
-                      <widget class="QLineEdit" name="lineEdit_Telefono_Empleado"/>
-                     </item>
-                     <item row="4" column="4">
-                      <widget class="QComboBox" name="comboBox_Cargo_Empleado">
-                       <item>
-                        <property name="text">
-                         <string>Gerente</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>Cajero</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>Repartidor</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>Cocinero</string>
-                        </property>
-                       </item>
-                      </widget>
-                     </item>
-                     <item row="3" column="4">
-                      <widget class="QLineEdit" name="lineEdit_Nombre_Empleado"/>
-                     </item>
-                     <item row="1" column="4">
+                     <item row="7" column="3">
                       <spacer name="verticalSpacer_7">
                        <property name="orientation">
                         <enum>Qt::Vertical</enum>
@@ -1309,6 +1270,18 @@ color:rgb(0, 170, 127);</string>
                         </size>
                        </property>
                       </spacer>
+                     </item>
+                     <item row="1" column="3">
+                      <widget class="QLabel" name="ID_Empleado">
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);</string>
+                       </property>
+                       <property name="text">
+                        <string>-</string>
+                       </property>
+                      </widget>
                      </item>
                     </layout>
                    </widget>
@@ -1458,17 +1431,10 @@ color:rgb(0, 170, 127);</string>
                   <item row="1" column="0" colspan="3">
                    <widget class="QTableWidget" name="tabla_Consultar_Empleado"/>
                   </item>
-                  <item row="2" column="0">
+                  <item row="2" column="1">
                    <widget class="QPushButton" name="pushButton_Mostrar_Empleado">
                     <property name="text">
                      <string>Mostrar</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="2">
-                   <widget class="QPushButton" name="pushButton_Limiar_Empleado">
-                    <property name="text">
-                     <string>Limpiar</string>
                     </property>
                    </widget>
                   </item>
@@ -1496,7 +1462,7 @@ text-decoration: underline;
 color:rgb(0, 170, 127);</string>
                        </property>
                        <property name="text">
-                        <string>TextLabel</string>
+                        <string>-</string>
                        </property>
                       </widget>
                      </item>
@@ -1612,7 +1578,7 @@ color:rgb(0, 170, 127);
                      <item row="8" column="4">
                       <widget class="QPushButton" name="pushButton_Modificar_Empleado">
                        <property name="text">
-                        <string>Registrar nuevo insumo</string>
+                        <string>Guardar cambios</string>
                        </property>
                       </widget>
                      </item>
@@ -1707,7 +1673,7 @@ color:rgb(0, 170, 127);
             <widget class="QWidget" name="Proveedores">
              <layout class="QVBoxLayout" name="verticalLayout_5">
               <item>
-               <widget class="QTabWidget" name="proveedor">
+               <widget class="QTabWidget" name="tab_Proveedores">
                 <property name="minimumSize">
                  <size>
                   <width>30</width>
@@ -1718,7 +1684,7 @@ color:rgb(0, 170, 127);
                  <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
                 </property>
                 <property name="currentIndex">
-                 <number>0</number>
+                 <number>3</number>
                 </property>
                 <widget class="QWidget" name="RegistrarProveedor">
                  <property name="styleSheet">
@@ -1811,7 +1777,7 @@ color:rgb(0, 170, 127);
                      <item row="6" column="4">
                       <widget class="QPushButton" name="pushButton_Registrar_Proveedor">
                        <property name="text">
-                        <string>Registrar nuevo insumo</string>
+                        <string>Registrar nuevo Proveedor</string>
                        </property>
                       </widget>
                      </item>
@@ -1837,7 +1803,7 @@ text-decoration: underline;
 color:rgb(0, 170, 127);</string>
                        </property>
                        <property name="text">
-                        <string>TextLabel</string>
+                        <string>-</string>
                        </property>
                       </widget>
                      </item>
@@ -2044,17 +2010,10 @@ color:rgb(0, 170, 127);
                   <item row="1" column="0" colspan="3">
                    <widget class="QTableWidget" name="tabla_Consultar_Proveedor"/>
                   </item>
-                  <item row="2" column="0">
+                  <item row="2" column="1">
                    <widget class="QPushButton" name="pushButton_Mostrar_Proveedor">
                     <property name="text">
                      <string>Mostrar</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="2">
-                   <widget class="QPushButton" name="pushButton_Limiar_Proveedor">
-                    <property name="text">
-                     <string>Limpiar</string>
                     </property>
                    </widget>
                   </item>
@@ -2089,14 +2048,14 @@ color:rgb(0, 170, 127);
                       </widget>
                      </item>
                      <item row="3" column="4">
-                      <widget class="QLabel" name="ID_Modificar_Insumo_m">
+                      <widget class="QLabel" name="ID_Modficar_Proveedor">
                        <property name="styleSheet">
                         <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
 text-decoration: underline;
 color:rgb(0, 170, 127);</string>
                        </property>
                        <property name="text">
-                        <string>TextLabel</string>
+                        <string>-</string>
                        </property>
                       </widget>
                      </item>
@@ -2170,7 +2129,7 @@ color:rgb(0, 170, 127);
                      <item row="7" column="4">
                       <widget class="QPushButton" name="pushButton_Modificar_Proveedor">
                        <property name="text">
-                        <string>Registrar nuevo insumo</string>
+                        <string>Guardar cambios</string>
                        </property>
                       </widget>
                      </item>
