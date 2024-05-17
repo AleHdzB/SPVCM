@@ -51,7 +51,7 @@ class Ui_MainWindow(object):
         icon = QIcon()
         icon.addFile(u"Iconos/hamburguesa.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButtonHamburguesa.setIcon(icon)
-        self.pushButtonHamburguesa.setIconSize(QSize(32, 32))
+        self.pushButtonHamburguesa.setIconSize(QSize(36, 32))
 
         self.horizontalLayout_3.addWidget(self.pushButtonHamburguesa)
 
@@ -247,9 +247,111 @@ class Ui_MainWindow(object):
         self.RegistrarComanda = QWidget()
         self.RegistrarComanda.setObjectName(u"RegistrarComanda")
         self.RegistrarComanda.setStyleSheet(u"")
+        self.gridLayout_18 = QGridLayout(self.RegistrarComanda)
+        self.gridLayout_18.setObjectName(u"gridLayout_18")
+        self.label_Titulo_Registrar_3 = QLabel(self.RegistrarComanda)
+        self.label_Titulo_Registrar_3.setObjectName(u"label_Titulo_Registrar_3")
+        self.label_Titulo_Registrar_3.setMinimumSize(QSize(30, 30))
+        self.label_Titulo_Registrar_3.setMaximumSize(QSize(1500, 200))
+        self.label_Titulo_Registrar_3.setStyleSheet(u"font: 75 36pt \"MS Shell Dlg 2\";")
+        self.label_Titulo_Registrar_3.setLineWidth(-1)
+        self.label_Titulo_Registrar_3.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.gridLayout_18.addWidget(self.label_Titulo_Registrar_3, 0, 1, 1, 2)
+
+        self.label_ID_4 = QLabel(self.RegistrarComanda)
+        self.label_ID_4.setObjectName(u"label_ID_4")
+        self.label_ID_4.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"text-decoration: underline;\n"
+"color:rgb(0, 170, 127);\n"
+"")
+
+        self.gridLayout_18.addWidget(self.label_ID_4, 1, 1, 1, 1)
+
+        self.ID_Comanda = QLabel(self.RegistrarComanda)
+        self.ID_Comanda.setObjectName(u"ID_Comanda")
+        self.ID_Comanda.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"text-decoration: underline;\n"
+"color:rgb(0, 170, 127);")
+
+        self.gridLayout_18.addWidget(self.ID_Comanda, 1, 2, 1, 1)
+
+        self.fecha_comanda = QLabel(self.RegistrarComanda)
+        self.fecha_comanda.setObjectName(u"fecha_comanda")
+        self.fecha_comanda.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"text-decoration: underline;\n"
+"color:rgb(0, 170, 127);\n"
+"")
+
+        self.gridLayout_18.addWidget(self.fecha_comanda, 1, 3, 2, 2)
+
+        self.label_ID_5 = QLabel(self.RegistrarComanda)
+        self.label_ID_5.setObjectName(u"label_ID_5")
+        self.label_ID_5.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"text-decoration: underline;\n"
+"color:rgb(0, 170, 127);\n"
+"")
+
+        self.gridLayout_18.addWidget(self.label_ID_5, 2, 1, 1, 1)
+
+        self.ID_Empleado_Comanda = QLabel(self.RegistrarComanda)
+        self.ID_Empleado_Comanda.setObjectName(u"ID_Empleado_Comanda")
+        self.ID_Empleado_Comanda.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"text-decoration: underline;\n"
+"color:rgb(0, 170, 127);")
+
+        self.gridLayout_18.addWidget(self.ID_Empleado_Comanda, 2, 2, 1, 1)
+
+        self.horizontalSpacer_11 = QSpacerItem(51, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout_18.addItem(self.horizontalSpacer_11, 3, 0, 1, 1)
+
+        self.label_109 = QLabel(self.RegistrarComanda)
+        self.label_109.setObjectName(u"label_109")
+
+        self.gridLayout_18.addWidget(self.label_109, 3, 1, 1, 1)
+
+        self.comboBox_Estatus_Comanda = QComboBox(self.RegistrarComanda)
+        self.comboBox_Estatus_Comanda.addItem("")
+        self.comboBox_Estatus_Comanda.addItem("")
+        self.comboBox_Estatus_Comanda.setObjectName(u"comboBox_Estatus_Comanda")
+
+        self.gridLayout_18.addWidget(self.comboBox_Estatus_Comanda, 3, 2, 1, 1)
+
+        self.label_108 = QLabel(self.RegistrarComanda)
+        self.label_108.setObjectName(u"label_108")
+
+        self.gridLayout_18.addWidget(self.label_108, 4, 1, 1, 1)
+
+        self.lineEdit_ID_Insumos_2 = QLineEdit(self.RegistrarComanda)
+        self.lineEdit_ID_Insumos_2.setObjectName(u"lineEdit_ID_Insumos_2")
+
+        self.gridLayout_18.addWidget(self.lineEdit_ID_Insumos_2, 4, 2, 1, 1)
+
+        self.pushButton_Buscar_Platillos_Comanda = QPushButton(self.RegistrarComanda)
+        self.pushButton_Buscar_Platillos_Comanda.setObjectName(u"pushButton_Buscar_Platillos_Comanda")
+
+        self.gridLayout_18.addWidget(self.pushButton_Buscar_Platillos_Comanda, 4, 3, 1, 1)
+
+        self.horizontalSpacer_10 = QSpacerItem(50, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout_18.addItem(self.horizontalSpacer_10, 4, 4, 1, 1)
+
+        self.tabla_Buscar_Platillos = QTableWidget(self.RegistrarComanda)
+        self.tabla_Buscar_Platillos.setObjectName(u"tabla_Buscar_Platillos")
+
+        self.gridLayout_18.addWidget(self.tabla_Buscar_Platillos, 5, 1, 1, 3)
+
+        self.pushButton_Registrar_Platillo_2 = QPushButton(self.RegistrarComanda)
+        self.pushButton_Registrar_Platillo_2.setObjectName(u"pushButton_Registrar_Platillo_2")
+
+        self.gridLayout_18.addWidget(self.pushButton_Registrar_Platillo_2, 6, 2, 1, 1)
+
         self.tab_Comandas.addTab(self.RegistrarComanda, "")
         self.BuscarComanda = QWidget()
         self.BuscarComanda.setObjectName(u"BuscarComanda")
+        self.gridLayout_16 = QGridLayout(self.BuscarComanda)
+        self.gridLayout_16.setObjectName(u"gridLayout_16")
         self.tab_Comandas.addTab(self.BuscarComanda, "")
         self.ConsultarComanda = QWidget()
         self.ConsultarComanda.setObjectName(u"ConsultarComanda")
@@ -271,6 +373,113 @@ class Ui_MainWindow(object):
         self.RegistrarPlatillo = QWidget()
         self.RegistrarPlatillo.setObjectName(u"RegistrarPlatillo")
         self.RegistrarPlatillo.setStyleSheet(u"")
+        self.gridLayout_5 = QGridLayout(self.RegistrarPlatillo)
+        self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.label_Titulo_Registrar_2 = QLabel(self.RegistrarPlatillo)
+        self.label_Titulo_Registrar_2.setObjectName(u"label_Titulo_Registrar_2")
+        self.label_Titulo_Registrar_2.setMinimumSize(QSize(30, 30))
+        self.label_Titulo_Registrar_2.setMaximumSize(QSize(1500, 200))
+        self.label_Titulo_Registrar_2.setStyleSheet(u"font: 75 36pt \"MS Shell Dlg 2\";")
+        self.label_Titulo_Registrar_2.setLineWidth(-1)
+        self.label_Titulo_Registrar_2.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.gridLayout_5.addWidget(self.label_Titulo_Registrar_2, 0, 1, 1, 2)
+
+        self.label_ID_3 = QLabel(self.RegistrarPlatillo)
+        self.label_ID_3.setObjectName(u"label_ID_3")
+        self.label_ID_3.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"text-decoration: underline;\n"
+"color:rgb(0, 170, 127);\n"
+"")
+
+        self.gridLayout_5.addWidget(self.label_ID_3, 1, 1, 1, 1)
+
+        self.ID_Platillo = QLabel(self.RegistrarPlatillo)
+        self.ID_Platillo.setObjectName(u"ID_Platillo")
+        self.ID_Platillo.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"text-decoration: underline;\n"
+"color:rgb(0, 170, 127);")
+
+        self.gridLayout_5.addWidget(self.ID_Platillo, 1, 2, 1, 1)
+
+        self.label_Nombre_Insumo_3 = QLabel(self.RegistrarPlatillo)
+        self.label_Nombre_Insumo_3.setObjectName(u"label_Nombre_Insumo_3")
+        self.label_Nombre_Insumo_3.setStyleSheet(u"font: 14pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_5.addWidget(self.label_Nombre_Insumo_3, 2, 1, 1, 1)
+
+        self.lineEdit_Nombre_Platillo = QLineEdit(self.RegistrarPlatillo)
+        self.lineEdit_Nombre_Platillo.setObjectName(u"lineEdit_Nombre_Platillo")
+
+        self.gridLayout_5.addWidget(self.lineEdit_Nombre_Platillo, 2, 2, 1, 1)
+
+        self.horizontalSpacer_8 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout_5.addItem(self.horizontalSpacer_8, 3, 0, 1, 1)
+
+        self.label_Existencia_3 = QLabel(self.RegistrarPlatillo)
+        self.label_Existencia_3.setObjectName(u"label_Existencia_3")
+        self.label_Existencia_3.setStyleSheet(u"font: 14pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_5.addWidget(self.label_Existencia_3, 3, 1, 1, 1)
+
+        self.SpinBox_Precio_Platillo = QDoubleSpinBox(self.RegistrarPlatillo)
+        self.SpinBox_Precio_Platillo.setObjectName(u"SpinBox_Precio_Platillo")
+
+        self.gridLayout_5.addWidget(self.SpinBox_Precio_Platillo, 3, 2, 1, 1)
+
+        self.label_Descripcion_3 = QLabel(self.RegistrarPlatillo)
+        self.label_Descripcion_3.setObjectName(u"label_Descripcion_3")
+        self.label_Descripcion_3.setStyleSheet(u"font: 14pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_5.addWidget(self.label_Descripcion_3, 4, 1, 1, 1)
+
+        self.textEdit_Descripcion_Platillo = QTextEdit(self.RegistrarPlatillo)
+        self.textEdit_Descripcion_Platillo.setObjectName(u"textEdit_Descripcion_Platillo")
+
+        self.gridLayout_5.addWidget(self.textEdit_Descripcion_Platillo, 4, 2, 1, 1)
+
+        self.label_106 = QLabel(self.RegistrarPlatillo)
+        self.label_106.setObjectName(u"label_106")
+
+        self.gridLayout_5.addWidget(self.label_106, 5, 1, 1, 1)
+
+        self.comboBox_Estatus_Platillo = QComboBox(self.RegistrarPlatillo)
+        self.comboBox_Estatus_Platillo.addItem("")
+        self.comboBox_Estatus_Platillo.addItem("")
+        self.comboBox_Estatus_Platillo.setObjectName(u"comboBox_Estatus_Platillo")
+
+        self.gridLayout_5.addWidget(self.comboBox_Estatus_Platillo, 5, 2, 1, 1)
+
+        self.label_107 = QLabel(self.RegistrarPlatillo)
+        self.label_107.setObjectName(u"label_107")
+
+        self.gridLayout_5.addWidget(self.label_107, 6, 1, 1, 1)
+
+        self.lineEdit_ID_Insumos = QLineEdit(self.RegistrarPlatillo)
+        self.lineEdit_ID_Insumos.setObjectName(u"lineEdit_ID_Insumos")
+
+        self.gridLayout_5.addWidget(self.lineEdit_ID_Insumos, 6, 2, 1, 1)
+
+        self.pushButton_Buscar_Insumos_ID = QPushButton(self.RegistrarPlatillo)
+        self.pushButton_Buscar_Insumos_ID.setObjectName(u"pushButton_Buscar_Insumos_ID")
+
+        self.gridLayout_5.addWidget(self.pushButton_Buscar_Insumos_ID, 6, 3, 1, 1)
+
+        self.tabla_Buscar_Insumos_Platillo = QTableWidget(self.RegistrarPlatillo)
+        self.tabla_Buscar_Insumos_Platillo.setObjectName(u"tabla_Buscar_Insumos_Platillo")
+
+        self.gridLayout_5.addWidget(self.tabla_Buscar_Insumos_Platillo, 7, 1, 1, 3)
+
+        self.horizontalSpacer_9 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout_5.addItem(self.horizontalSpacer_9, 7, 4, 1, 1)
+
+        self.pushButton_Registrar_Platillo = QPushButton(self.RegistrarPlatillo)
+        self.pushButton_Registrar_Platillo.setObjectName(u"pushButton_Registrar_Platillo")
+
+        self.gridLayout_5.addWidget(self.pushButton_Registrar_Platillo, 8, 1, 1, 2)
+
         self.tab_Platillos.addTab(self.RegistrarPlatillo, "")
         self.BuscarPlatillo = QWidget()
         self.BuscarPlatillo.setObjectName(u"BuscarPlatillo")
@@ -295,9 +504,93 @@ class Ui_MainWindow(object):
         self.RegistrarCompra = QWidget()
         self.RegistrarCompra.setObjectName(u"RegistrarCompra")
         self.RegistrarCompra.setStyleSheet(u"")
+        self.gridLayout_19 = QGridLayout(self.RegistrarCompra)
+        self.gridLayout_19.setObjectName(u"gridLayout_19")
+        self.label_Titulo_Registrar_4 = QLabel(self.RegistrarCompra)
+        self.label_Titulo_Registrar_4.setObjectName(u"label_Titulo_Registrar_4")
+        self.label_Titulo_Registrar_4.setMinimumSize(QSize(30, 30))
+        self.label_Titulo_Registrar_4.setMaximumSize(QSize(1500, 200))
+        self.label_Titulo_Registrar_4.setStyleSheet(u"font: 75 36pt \"MS Shell Dlg 2\";")
+        self.label_Titulo_Registrar_4.setLineWidth(-1)
+        self.label_Titulo_Registrar_4.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.gridLayout_19.addWidget(self.label_Titulo_Registrar_4, 0, 1, 1, 2)
+
+        self.fecha_compra = QLabel(self.RegistrarCompra)
+        self.fecha_compra.setObjectName(u"fecha_compra")
+        self.fecha_compra.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"text-decoration: underline;\n"
+"color:rgb(0, 170, 127);\n"
+"")
+
+        self.gridLayout_19.addWidget(self.fecha_compra, 0, 3, 3, 2)
+
+        self.label_ID_6 = QLabel(self.RegistrarCompra)
+        self.label_ID_6.setObjectName(u"label_ID_6")
+        self.label_ID_6.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"text-decoration: underline;\n"
+"color:rgb(0, 170, 127);\n"
+"")
+
+        self.gridLayout_19.addWidget(self.label_ID_6, 1, 1, 1, 1)
+
+        self.ID_Compra = QLabel(self.RegistrarCompra)
+        self.ID_Compra.setObjectName(u"ID_Compra")
+        self.ID_Compra.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"text-decoration: underline;\n"
+"color:rgb(0, 170, 127);")
+
+        self.gridLayout_19.addWidget(self.ID_Compra, 1, 2, 1, 1)
+
+        self.label_Nombre_Insumo_4 = QLabel(self.RegistrarCompra)
+        self.label_Nombre_Insumo_4.setObjectName(u"label_Nombre_Insumo_4")
+        self.label_Nombre_Insumo_4.setStyleSheet(u"font: 14pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_19.addWidget(self.label_Nombre_Insumo_4, 2, 1, 1, 1)
+
+        self.lineEdit_ID_Proveedor = QLineEdit(self.RegistrarCompra)
+        self.lineEdit_ID_Proveedor.setObjectName(u"lineEdit_ID_Proveedor")
+
+        self.gridLayout_19.addWidget(self.lineEdit_ID_Proveedor, 2, 2, 1, 1)
+
+        self.horizontalSpacer_14 = QSpacerItem(68, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout_19.addItem(self.horizontalSpacer_14, 3, 0, 1, 1)
+
+        self.label_110 = QLabel(self.RegistrarCompra)
+        self.label_110.setObjectName(u"label_110")
+
+        self.gridLayout_19.addWidget(self.label_110, 4, 1, 1, 1)
+
+        self.lineEdit_ID_Insumos_Compra = QLineEdit(self.RegistrarCompra)
+        self.lineEdit_ID_Insumos_Compra.setObjectName(u"lineEdit_ID_Insumos_Compra")
+
+        self.gridLayout_19.addWidget(self.lineEdit_ID_Insumos_Compra, 4, 2, 1, 1)
+
+        self.pushButton_Buscar_Insumos_Compra = QPushButton(self.RegistrarCompra)
+        self.pushButton_Buscar_Insumos_Compra.setObjectName(u"pushButton_Buscar_Insumos_Compra")
+
+        self.gridLayout_19.addWidget(self.pushButton_Buscar_Insumos_Compra, 4, 3, 1, 1)
+
+        self.tabla_Buscar_Insumos_Compra = QTableWidget(self.RegistrarCompra)
+        self.tabla_Buscar_Insumos_Compra.setObjectName(u"tabla_Buscar_Insumos_Compra")
+
+        self.gridLayout_19.addWidget(self.tabla_Buscar_Insumos_Compra, 5, 1, 1, 3)
+
+        self.horizontalSpacer_12 = QSpacerItem(67, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout_19.addItem(self.horizontalSpacer_12, 5, 4, 1, 1)
+
+        self.pushButton_Registrar_Compra = QPushButton(self.RegistrarCompra)
+        self.pushButton_Registrar_Compra.setObjectName(u"pushButton_Registrar_Compra")
+
+        self.gridLayout_19.addWidget(self.pushButton_Registrar_Compra, 6, 1, 1, 3)
+
         self.tab_Compras.addTab(self.RegistrarCompra, "")
         self.BuscarCompra = QWidget()
         self.BuscarCompra.setObjectName(u"BuscarCompra")
+        self.gridLayout_17 = QGridLayout(self.BuscarCompra)
+        self.gridLayout_17.setObjectName(u"gridLayout_17")
         self.tab_Compras.addTab(self.BuscarCompra, "")
         self.ConsultarCompra = QWidget()
         self.ConsultarCompra.setObjectName(u"ConsultarCompra")
@@ -1180,10 +1473,10 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(6)
-        self.tab_Comandas.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(1)
+        self.tab_Comandas.setCurrentIndex(0)
         self.tab_Platillos.setCurrentIndex(0)
-        self.tab_Compras.setCurrentIndex(1)
+        self.tab_Compras.setCurrentIndex(0)
         self.tab_Insumo.setCurrentIndex(0)
         self.tab_Empleados.setCurrentIndex(3)
         self.tab_Proveedores.setCurrentIndex(3)
@@ -1202,14 +1495,54 @@ class Ui_MainWindow(object):
         self.pushButtonEmpleados.setText(QCoreApplication.translate("MainWindow", u"Empleados", None))
         self.pushButtonProveedores.setText(QCoreApplication.translate("MainWindow", u"Proveedores", None))
         self.Fondo.setText("")
+        self.label_Titulo_Registrar_3.setText(QCoreApplication.translate("MainWindow", u"Registrar Nueva Comanda", None))
+        self.label_ID_4.setText(QCoreApplication.translate("MainWindow", u"ID:", None))
+        self.ID_Comanda.setText(QCoreApplication.translate("MainWindow", u"-", None))
+        self.fecha_comanda.setText(QCoreApplication.translate("MainWindow", u"dd/mm/aaaa", None))
+        self.label_ID_5.setText(QCoreApplication.translate("MainWindow", u"Empleado:", None))
+        self.ID_Empleado_Comanda.setText(QCoreApplication.translate("MainWindow", u"-", None))
+        self.label_109.setText(QCoreApplication.translate("MainWindow", u"Estatus:", None))
+        self.comboBox_Estatus_Comanda.setItemText(0, QCoreApplication.translate("MainWindow", u"Activo", None))
+        self.comboBox_Estatus_Comanda.setItemText(1, QCoreApplication.translate("MainWindow", u"Inactivo", None))
+
+        self.label_108.setText(QCoreApplication.translate("MainWindow", u"Platillos", None))
+        self.lineEdit_ID_Insumos_2.setText("")
+        self.lineEdit_ID_Insumos_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese el Identificador del platillo", None))
+        self.pushButton_Buscar_Platillos_Comanda.setText(QCoreApplication.translate("MainWindow", u"Buscar", None))
+        self.pushButton_Registrar_Platillo_2.setText(QCoreApplication.translate("MainWindow", u"Registrar nuevo Platillo", None))
         self.tab_Comandas.setTabText(self.tab_Comandas.indexOf(self.RegistrarComanda), QCoreApplication.translate("MainWindow", u"Registrar comanda", None))
         self.tab_Comandas.setTabText(self.tab_Comandas.indexOf(self.BuscarComanda), QCoreApplication.translate("MainWindow", u"Buscar comanda", None))
         self.tab_Comandas.setTabText(self.tab_Comandas.indexOf(self.ConsultarComanda), QCoreApplication.translate("MainWindow", u"Listado comandas", None))
         self.tab_Comandas.setTabText(self.tab_Comandas.indexOf(self.ModificarComanda), QCoreApplication.translate("MainWindow", u"Modificar comanda", None))
+        self.label_Titulo_Registrar_2.setText(QCoreApplication.translate("MainWindow", u"Registrar Nuevo Platillo", None))
+        self.label_ID_3.setText(QCoreApplication.translate("MainWindow", u"ID:", None))
+        self.ID_Platillo.setText(QCoreApplication.translate("MainWindow", u"-", None))
+        self.label_Nombre_Insumo_3.setText(QCoreApplication.translate("MainWindow", u"Nombre:", None))
+        self.label_Existencia_3.setText(QCoreApplication.translate("MainWindow", u"Precio:", None))
+        self.label_Descripcion_3.setText(QCoreApplication.translate("MainWindow", u"Descripcion:", None))
+        self.label_106.setText(QCoreApplication.translate("MainWindow", u"Estatus:", None))
+        self.comboBox_Estatus_Platillo.setItemText(0, QCoreApplication.translate("MainWindow", u"Activo", None))
+        self.comboBox_Estatus_Platillo.setItemText(1, QCoreApplication.translate("MainWindow", u"Inactivo", None))
+
+        self.label_107.setText(QCoreApplication.translate("MainWindow", u"Insumos:", None))
+        self.lineEdit_ID_Insumos.setText("")
+        self.lineEdit_ID_Insumos.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese el Identificador del insumo", None))
+        self.pushButton_Buscar_Insumos_ID.setText(QCoreApplication.translate("MainWindow", u"Buscar", None))
+        self.pushButton_Registrar_Platillo.setText(QCoreApplication.translate("MainWindow", u"Registrar nuevo Platillo", None))
         self.tab_Platillos.setTabText(self.tab_Platillos.indexOf(self.RegistrarPlatillo), QCoreApplication.translate("MainWindow", u"Registrar platillo", None))
         self.tab_Platillos.setTabText(self.tab_Platillos.indexOf(self.BuscarPlatillo), QCoreApplication.translate("MainWindow", u"Buscar platillo", None))
         self.tab_Platillos.setTabText(self.tab_Platillos.indexOf(self.ConsultarPlatillo), QCoreApplication.translate("MainWindow", u"Listado platillo", None))
         self.tab_Platillos.setTabText(self.tab_Platillos.indexOf(self.ModificarPlatillo), QCoreApplication.translate("MainWindow", u"Modificar platillo", None))
+        self.label_Titulo_Registrar_4.setText(QCoreApplication.translate("MainWindow", u"Registrar Nueva Compra", None))
+        self.fecha_compra.setText(QCoreApplication.translate("MainWindow", u"dd/mm/aaaa", None))
+        self.label_ID_6.setText(QCoreApplication.translate("MainWindow", u"ID:", None))
+        self.ID_Compra.setText(QCoreApplication.translate("MainWindow", u"-", None))
+        self.label_Nombre_Insumo_4.setText(QCoreApplication.translate("MainWindow", u"Proveedor:", None))
+        self.label_110.setText(QCoreApplication.translate("MainWindow", u"Insumos:", None))
+        self.lineEdit_ID_Insumos_Compra.setText("")
+        self.lineEdit_ID_Insumos_Compra.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese el Identificador del insumo", None))
+        self.pushButton_Buscar_Insumos_Compra.setText(QCoreApplication.translate("MainWindow", u"Buscar", None))
+        self.pushButton_Registrar_Compra.setText(QCoreApplication.translate("MainWindow", u"Registrar nuevo Compra", None))
         self.tab_Compras.setTabText(self.tab_Compras.indexOf(self.RegistrarCompra), QCoreApplication.translate("MainWindow", u"Registrar compra", None))
         self.tab_Compras.setTabText(self.tab_Compras.indexOf(self.BuscarCompra), QCoreApplication.translate("MainWindow", u"Buscar compra", None))
         self.tab_Compras.setTabText(self.tab_Compras.indexOf(self.ConsultarCompra), QCoreApplication.translate("MainWindow", u"Listado compra", None))

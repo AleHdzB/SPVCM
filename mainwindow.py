@@ -639,13 +639,18 @@ class MainWindow(QMainWindow):
     self.stackedWidget.setCurrentIndex(1)
     self.ui.tab_Comandas.setCurrentIndex(0)
   @Slot()
-  def navegar_compras(self):
-    self.stackedWidget.setCurrentIndex(2)
-    self.ui.tab_Compras.setCurrentIndex(0)
-  @Slot()
   def navegar_platillos(self):
-    self.stackedWidget.setCurrentIndex(3)
+    self.stackedWidget.setCurrentIndex(2)
     self.ui.tab_Platillos.setCurrentIndex(0)
+
+    next_id = get_cont_platillos(self)
+    next_id += 1
+    self.ui.ID_Platillo.setText(str(next_id))
+    #self.ui.pushButton_Modificar_Inusmo.hide()
+  @Slot()
+  def navegar_compras(self):
+    self.stackedWidget.setCurrentIndex(3)
+    self.ui.tab_Compras.setCurrentIndex(0)
   @Slot()
   def navegar_insumos(self):
     self.stackedWidget.setCurrentIndex(4)

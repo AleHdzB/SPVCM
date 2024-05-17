@@ -63,7 +63,7 @@ def get_cont_proveedor(self):
         max_id = 0
     return max_id
 
-"""def get_cont_platillo(self):
+def get_cont_platillos(self):
     conn = sqlite3.connect("C:\\Users\\Ale\\Documents\\GitHub\\SPVCM\\DataBase.db")
     cursor = conn.cursor()
 
@@ -72,4 +72,4 @@ def get_cont_proveedor(self):
     max_id = cursor.fetchone()[0]  # Obtiene el valor del ID máximo
     if max_id is None:
         max_id = 0
-    return max_id"""
+    return max_id

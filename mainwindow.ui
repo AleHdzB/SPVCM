@@ -96,7 +96,7 @@ border:2px solid #000000;
          </property>
          <property name="iconSize">
           <size>
-           <width>32</width>
+           <width>36</width>
            <height>32</height>
           </size>
          </property>
@@ -365,7 +365,7 @@ background-color:rgb(255, 255, 255);
              <string notr="true"/>
             </property>
             <property name="currentIndex">
-             <number>6</number>
+             <number>3</number>
             </property>
             <widget class="QWidget" name="Inicio">
              <layout class="QGridLayout" name="gridLayout">
@@ -502,7 +502,7 @@ background-color:rgb(255, 255, 255);
 </string>
                 </property>
                 <property name="currentIndex">
-                 <number>1</number>
+                 <number>0</number>
                 </property>
                 <widget class="QWidget" name="RegistrarComanda">
                  <property name="styleSheet">
@@ -511,11 +511,186 @@ background-color:rgb(255, 255, 255);
                  <attribute name="title">
                   <string>Registrar comanda</string>
                  </attribute>
+                 <layout class="QGridLayout" name="gridLayout_18">
+                  <item row="0" column="1" colspan="2">
+                   <widget class="QLabel" name="label_Titulo_Registrar_3">
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>1500</width>
+                      <height>200</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 36pt &quot;MS Shell Dlg 2&quot;;</string>
+                    </property>
+                    <property name="lineWidth">
+                     <number>-1</number>
+                    </property>
+                    <property name="text">
+                     <string>Registrar Nueva Comanda</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QLabel" name="label_ID_4">
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);
+</string>
+                    </property>
+                    <property name="text">
+                     <string>ID:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QLabel" name="ID_Comanda">
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);</string>
+                    </property>
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="3" rowspan="2" colspan="2">
+                   <widget class="QLabel" name="fecha_comanda">
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);
+</string>
+                    </property>
+                    <property name="text">
+                     <string>dd/mm/aaaa</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QLabel" name="label_ID_5">
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);
+</string>
+                    </property>
+                    <property name="text">
+                     <string>Empleado:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="2">
+                   <widget class="QLabel" name="ID_Empleado_Comanda">
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);</string>
+                    </property>
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <spacer name="horizontalSpacer_11">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>51</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QLabel" name="label_109">
+                    <property name="text">
+                     <string>Estatus:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="2">
+                   <widget class="QComboBox" name="comboBox_Estatus_Comanda">
+                    <item>
+                     <property name="text">
+                      <string>Activo</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Inactivo</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QLabel" name="label_108">
+                    <property name="text">
+                     <string>Platillos</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="2">
+                   <widget class="QLineEdit" name="lineEdit_ID_Insumos_2">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="placeholderText">
+                     <string>Ingrese el Identificador del platillo</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="3">
+                   <widget class="QPushButton" name="pushButton_Buscar_Platillos_Comanda">
+                    <property name="text">
+                     <string>Buscar</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="4">
+                   <spacer name="horizontalSpacer_10">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>50</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="5" column="1" colspan="3">
+                   <widget class="QTableWidget" name="tabla_Buscar_Platillos"/>
+                  </item>
+                  <item row="6" column="2">
+                   <widget class="QPushButton" name="pushButton_Registrar_Platillo_2">
+                    <property name="text">
+                     <string>Registrar nuevo Platillo</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                 <widget class="QWidget" name="BuscarComanda">
                  <attribute name="title">
                   <string>Buscar comanda</string>
                  </attribute>
+                 <layout class="QGridLayout" name="gridLayout_16"/>
                 </widget>
                 <widget class="QWidget" name="ConsultarComanda">
                  <attribute name="title">
@@ -548,6 +723,181 @@ background-color:rgb(255, 255, 255);
                  <attribute name="title">
                   <string>Registrar platillo</string>
                  </attribute>
+                 <layout class="QGridLayout" name="gridLayout_5">
+                  <item row="0" column="1" colspan="2">
+                   <widget class="QLabel" name="label_Titulo_Registrar_2">
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>1500</width>
+                      <height>200</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 36pt &quot;MS Shell Dlg 2&quot;;</string>
+                    </property>
+                    <property name="lineWidth">
+                     <number>-1</number>
+                    </property>
+                    <property name="text">
+                     <string>Registrar Nuevo Platillo</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QLabel" name="label_ID_3">
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);
+</string>
+                    </property>
+                    <property name="text">
+                     <string>ID:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QLabel" name="ID_Platillo">
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);</string>
+                    </property>
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QLabel" name="label_Nombre_Insumo_3">
+                    <property name="styleSheet">
+                     <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                    </property>
+                    <property name="text">
+                     <string>Nombre:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="2">
+                   <widget class="QLineEdit" name="lineEdit_Nombre_Platillo"/>
+                  </item>
+                  <item row="3" column="0">
+                   <spacer name="horizontalSpacer_8">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QLabel" name="label_Existencia_3">
+                    <property name="styleSheet">
+                     <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                    </property>
+                    <property name="text">
+                     <string>Precio:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="2">
+                   <widget class="QDoubleSpinBox" name="SpinBox_Precio_Platillo"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QLabel" name="label_Descripcion_3">
+                    <property name="styleSheet">
+                     <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                    </property>
+                    <property name="text">
+                     <string>Descripcion:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="2">
+                   <widget class="QTextEdit" name="textEdit_Descripcion_Platillo"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QLabel" name="label_106">
+                    <property name="text">
+                     <string>Estatus:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="2">
+                   <widget class="QComboBox" name="comboBox_Estatus_Platillo">
+                    <item>
+                     <property name="text">
+                      <string>Activo</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Inactivo</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QLabel" name="label_107">
+                    <property name="text">
+                     <string>Insumos:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="2">
+                   <widget class="QLineEdit" name="lineEdit_ID_Insumos">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="placeholderText">
+                     <string>Ingrese el Identificador del insumo</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="3">
+                   <widget class="QPushButton" name="pushButton_Buscar_Insumos_ID">
+                    <property name="text">
+                     <string>Buscar</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="1" colspan="3">
+                   <widget class="QTableWidget" name="tabla_Buscar_Insumos_Platillo"/>
+                  </item>
+                  <item row="7" column="4">
+                   <spacer name="horizontalSpacer_9">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="8" column="1" colspan="2">
+                   <widget class="QPushButton" name="pushButton_Registrar_Platillo">
+                    <property name="text">
+                     <string>Registrar nuevo Platillo</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                 <widget class="QWidget" name="BuscarPlatillo">
                  <attribute name="title">
@@ -576,7 +926,7 @@ background-color:rgb(255, 255, 255);
                  <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
                 </property>
                 <property name="currentIndex">
-                 <number>1</number>
+                 <number>0</number>
                 </property>
                 <widget class="QWidget" name="RegistrarCompra">
                  <property name="styleSheet">
@@ -585,11 +935,153 @@ background-color:rgb(255, 255, 255);
                  <attribute name="title">
                   <string>Registrar compra</string>
                  </attribute>
+                 <layout class="QGridLayout" name="gridLayout_19">
+                  <item row="0" column="1" colspan="2">
+                   <widget class="QLabel" name="label_Titulo_Registrar_4">
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>1500</width>
+                      <height>200</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 36pt &quot;MS Shell Dlg 2&quot;;</string>
+                    </property>
+                    <property name="lineWidth">
+                     <number>-1</number>
+                    </property>
+                    <property name="text">
+                     <string>Registrar Nueva Compra</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="3" rowspan="3" colspan="2">
+                   <widget class="QLabel" name="fecha_compra">
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);
+</string>
+                    </property>
+                    <property name="text">
+                     <string>dd/mm/aaaa</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QLabel" name="label_ID_6">
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);
+</string>
+                    </property>
+                    <property name="text">
+                     <string>ID:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QLabel" name="ID_Compra">
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);</string>
+                    </property>
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QLabel" name="label_Nombre_Insumo_4">
+                    <property name="styleSheet">
+                     <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                    </property>
+                    <property name="text">
+                     <string>Proveedor:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="2">
+                   <widget class="QLineEdit" name="lineEdit_ID_Proveedor"/>
+                  </item>
+                  <item row="3" column="0">
+                   <spacer name="horizontalSpacer_14">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>68</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QLabel" name="label_110">
+                    <property name="text">
+                     <string>Insumos:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="2">
+                   <widget class="QLineEdit" name="lineEdit_ID_Insumos_Compra">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="placeholderText">
+                     <string>Ingrese el Identificador del insumo</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="3">
+                   <widget class="QPushButton" name="pushButton_Buscar_Insumos_Compra">
+                    <property name="text">
+                     <string>Buscar</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1" colspan="3">
+                   <widget class="QTableWidget" name="tabla_Buscar_Insumos_Compra"/>
+                  </item>
+                  <item row="5" column="4">
+                   <spacer name="horizontalSpacer_12">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>67</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="6" column="1" colspan="3">
+                   <widget class="QPushButton" name="pushButton_Registrar_Compra">
+                    <property name="text">
+                     <string>Registrar nuevo Compra</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                 <widget class="QWidget" name="BuscarCompra">
                  <attribute name="title">
                   <string>Buscar compra</string>
                  </attribute>
+                 <layout class="QGridLayout" name="gridLayout_17"/>
                 </widget>
                 <widget class="QWidget" name="ConsultarCompra">
                  <attribute name="title">
