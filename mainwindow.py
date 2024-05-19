@@ -62,12 +62,11 @@ class MainWindow(QMainWindow):
 #---------------------------------------REGISTRO de PLATILLOS en la BASE DE DATOS-----------------------------------------------------
   @Slot()
   def registrar_platillo(self):
-    print("hola")
     # Mostrar un mensaje de confirmación
     respuesta = QMessageBox.question(self, "Confirmar registro", "¿Desea registrar el Platillo?",
                                       QMessageBox.Yes | QMessageBox.No)
     
-    if respuesta == QMessageBox.Yes and self.ui.lineEdit_Nombre_Platillo:
+    if respuesta == QMessageBox.Yes and self.ui.lineEdit_Nombre_Platillo.text():
       try:
         #Conectar a la base de datos
         conn = connect_db()
@@ -104,9 +103,16 @@ class MainWindow(QMainWindow):
       finally:
           # Cerrar la conexión a la base de datos
           conn.close()
-          self.ui.lineEdit_Nombre_Proveedor.clear()
-          self.ui.lineEdit_Telefono_Proveedor.clear()
-          self.ui.ID_Proveedor.setText(str(get_cont_proveedor(self)+1))
+          self.ui.lineEdit_Nombre_Platillo.clear()
+          self.ui.SpinBox_Precio_Platillo.clear()
+          self.ui.lineEdit_Descripcion_Platillo.clear()
+          self.ui.comboBox_Estatus_Platillo.clear()
+          self.ui.lineEdit_ID_Insumos_Platillo.clear()
+          self.ui.Label_Nombre_Insumo.clear()
+          self.ui.Label_Descripcion_Insumo.clear()
+          self.ui.SpinBox_Cantidad_Insumo.clear()
+          self.ui.tabla_Buscar_Insumos_Platillo.setRowCount(0)
+          self.ui.ID_Platillo.setText(str(get_cont_platillos(self)+1))
 
     else:
       if respuesta != QMessageBox.No:
@@ -145,7 +151,7 @@ class MainWindow(QMainWindow):
     if insumo:
       # Mostrar Encabezados en la tabla
       self.ui.tabla_Buscar_Insumos_Platillo.setColumnCount(4) #Config. numero de columnas
-      headers = ["ID","NOMBRE","CANTIDAD","DESCRIPCION"]
+      headers = ["ID", "NOMBRE", "CANTIDAD", "DESCRIPCIÓN"]
       self.ui.tabla_Buscar_Insumos_Platillo.setHorizontalHeaderLabels(headers)  #Headers de Columnas
 
       # Ocultar los números de las filas
@@ -211,7 +217,7 @@ class MainWindow(QMainWindow):
     respuesta = QMessageBox.question(self, "Confirmar registro", "¿Desea registrar el Proveedor?",
                                       QMessageBox.Yes | QMessageBox.No)
     
-    if respuesta == QMessageBox.Yes and self.ui.lineEdit_Nombre_Proveedor:
+    if respuesta == QMessageBox.Yes and self.ui.lineEdit_Nombre_Proveedor.text():
       try:
         #Conectar a la base de datos
         conn = connect_db()
