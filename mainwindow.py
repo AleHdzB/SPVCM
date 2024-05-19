@@ -6,6 +6,7 @@ from Metodos import *
 from PySide2.QtCore import Qt
 
 
+
 class MainWindow(QMainWindow):
   def __init__(self):
     super(MainWindow, self).__init__()
@@ -31,6 +32,10 @@ class MainWindow(QMainWindow):
     self.ui.pushButton_Registrar_Empleado.clicked.connect(self.registrar_empleado)
 
     self.ui.pushButton_Registrar_Proveedor.clicked.connect(self.registrar_proveedor)
+      #REGISTROS de 1 a *
+    self.ui.pushButton_Registrar_Platillo.clicked.connect(self.registrar_platillo)
+    self.ui.pushButton_Buscar_Insumos_ID.clicked.connect(self.buscar_inusmos_platillo)
+    self.ui.pushButton_Agregar_Insumo.clicked.connect(self.agregar_Insumo_Tabla)
     #BUSQUEDA de datos en la Base de Datos
     self.ui.pushButton_Buscar_Insumo.clicked.connect(self.buscar_insumo)
 
@@ -53,8 +58,152 @@ class MainWindow(QMainWindow):
     self.ui.pushButton_Buscar_Proveedor_m.clicked.connect(self.modificar_buscar_proveedor)
     self.ui.pushButton_Modificar_Proveedor.clicked.connect(self.modificar_proveedor)    
 
+#(((((((((((((((((((((((((((((((((((((((((((((((((((((((((PLATILLOS))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+#---------------------------------------REGISTRO de PLATILLOS en la BASE DE DATOS-----------------------------------------------------
+  @Slot()
+  def registrar_platillo(self):
+    print("hola")
+    # Mostrar un mensaje de confirmación
+    respuesta = QMessageBox.question(self, "Confirmar registro", "¿Desea registrar el Platillo?",
+                                      QMessageBox.Yes | QMessageBox.No)
+    
+    if respuesta == QMessageBox.Yes and self.ui.lineEdit_Nombre_Platillo:
+      try:
+        #Conectar a la base de datos
+        conn = connect_db()
+        cursor = conn.cursor()
+
+        # Obtener los valores de los campos de entrada
+        nombre = self.ui.lineEdit_Nombre_Platillo.text()
+        precio = self.ui.SpinBox_Precio_Platillo.value()
+        descripcion = self.ui.lineEdit_Descripcion_Platillo.text()
+        estatus = self.ui.comboBox_Estatus_Proveedor.currentText()
+        # Insertar los valores en la tabla Insumo
+        cursor.execute("INSERT INTO Platillo (nombre, precio, descripcion,estatus) VALUES (?, ?, ?, ?)", 
+                      (nombre, precio , descripcion,estatus))
+        # Confirmar la inserción
+        conn.commit()
+#INSERT EN TABLA 1 a *
+        id_platillo = int(self.ui.ID_Platillo.text())
+        
+        num_filas = self.ui.tabla_Buscar_Insumos_Platillo.rowCount()
+        for i in range(num_filas):
+          id_insumo = itemToInt(self.ui.tabla_Buscar_Insumos_Platillo.item(i,0))
+          cantidad = itemToFloat(self.ui.tabla_Buscar_Insumos_Platillo.item(i,0))
+          
+          cursor.execute("INSERT INTO Insumos_Platillo (id_insumo, id_platillo, cantidad) VALUES (?, ?, ?)", 
+                  (id_insumo, id_platillo ,cantidad))
+          conn.commit()
+          
+        # Mostrar un mensaje de éxito
+        QMessageBox.information(self, "Registro exitoso", "El Platillo se ha registrado correctamente.")        
+
+      except sqlite3.Error as e:
+          # Mostrar un mensaje de error si ocurre un problema
+          QMessageBox.critical(self, "Error", f"Error al registrar el Proveedor: {str(e)}")
+      finally:
+          # Cerrar la conexión a la base de datos
+          conn.close()
+          self.ui.lineEdit_Nombre_Proveedor.clear()
+          self.ui.lineEdit_Telefono_Proveedor.clear()
+          self.ui.ID_Proveedor.setText(str(get_cont_proveedor(self)+1))
+
+    else:
+      if respuesta != QMessageBox.No:
+          QMessageBox.critical(self, "Error", "No hay informacion suficiente paraq registrar el Platillo .")
+  @Slot()
+  def buscar_inusmos_platillo(self): 
+      try:
+          id_insumo = self.ui.lineEdit_ID_Insumos_Platillo.text()
+          # Conectar a la base de datos
+          insumo = buscar_insumo(self,id_insumo)
+
+          # Mostrar los datos en la tabla
+          if insumo:
+            # Limpiar la labels
+            self.ui.Label_Nombre_Insumo.clear()
+            self.ui.Label_Descripcion_Insumo.clear()
+
+            #Mostrar Datos de Insumo en LABELS
+            self.ui.Label_Nombre_Insumo.setText(str(insumo[1]))
+            self.ui.Label_Descripcion_Insumo.setText(str(insumo[3]))
+            self.ui.pushButton_Agregar_Insumo.show()
+          else:
+              # Si no se encuentra el Insumo, mostrar un mensaje
+              QMessageBox.warning(self, "Insumo no encontrado", "No se encontró un Insumo con el ID especificado.")
+
+      except sqlite3.Error as e:
+          # Mostrar un mensaje de error si ocurre un problema
+          QMessageBox.critical(self, "Error", f"Error al buscar el Proveedor: {str(e)}")             
+  @Slot()
+  def agregar_Insumo_Tabla(self):
+    id_insumo = self.ui.lineEdit_ID_Insumos_Platillo.text()
+    # Conectar a la base de datos
+    insumo = buscar_insumo(self,id_insumo)
+
+    # Mostrar los datos en la tabla
+    if insumo:
+      # Mostrar Encabezados en la tabla
+      self.ui.tabla_Buscar_Insumos_Platillo.setColumnCount(4) #Config. numero de columnas
+      headers = ["ID","NOMBRE","CANTIDAD","DESCRIPCION"]
+      self.ui.tabla_Buscar_Insumos_Platillo.setHorizontalHeaderLabels(headers)  #Headers de Columnas
+
+      # Ocultar los números de las filas
+      self.ui.tabla_Buscar_Insumos_Platillo.verticalHeader().setVisible(False) 
+
+      id_insumo = self.ui.lineEdit_ID_Insumos_Platillo.text()
+      num_filas = self.ui.tabla_Buscar_Insumos_Platillo.rowCount()
+      fila_encontrado = -1
+      cantidad = self.ui.SpinBox_Cantidad_Insumo.value()
+      encontrado = False
+      # Buscar ID en la tabla
+      for i in range (num_filas): 
+        id_actual_item = self.ui.tabla_Buscar_Insumos_Platillo.item(i,0).text()
+        id_actual = str(id_actual_item)
+        if(id_actual == id_insumo):
+            fila_encontrado = i
+            encontrado = True
+            break
+      if (encontrado): # Si se ecnontro el insumo
+        #obtener cantidad actual 
+        cantidad_actual_item = self.ui.tabla_Buscar_Insumos_Platillo.item(fila_encontrado,2)
+        cantidad_actual_texto = cantidad_actual_item.text()
+        cantidad_actual = float(cantidad_actual_texto)
+
+        # cantidad a Item
+        nueva_cantidad = cantidad_actual + cantidad
+
+        nueva_cantidad_widget = QTableWidgetItem(str(nueva_cantidad))
+        nueva_cantidad_widget.setTextAlignment(Qt.AlignCenter)
+        #Actualizar cantidad
+        self.ui.tabla_Buscar_Insumos_Platillo.setItem(fila_encontrado,2,nueva_cantidad_widget)
+      else:  #Si NO se encontro el ID
+        self.ui.tabla_Buscar_Insumos_Platillo.insertRow(num_filas)
+
+        id_widget = QTableWidgetItem(str(insumo[0]))
+        nombre_widget = QTableWidgetItem(insumo[1])
+        cantidad_widget = QTableWidgetItem(str(cantidad))
+        descripcion_widget = QTableWidgetItem(insumo[3])
+
+        # Centrar el contenido de las celdas
+        id_widget.setTextAlignment(Qt.AlignCenter)
+        nombre_widget.setTextAlignment(Qt.AlignCenter)
+        cantidad_widget.setTextAlignment(Qt.AlignCenter)
+        descripcion_widget.setTextAlignment(Qt.AlignCenter)
+
+        self.ui.tabla_Buscar_Insumos_Platillo.setItem(num_filas,0,id_widget)
+        self.ui.tabla_Buscar_Insumos_Platillo.setItem(num_filas,1,nombre_widget)
+        self.ui.tabla_Buscar_Insumos_Platillo.setItem(num_filas,2,cantidad_widget)
+        self.ui.tabla_Buscar_Insumos_Platillo.setItem(num_filas,3,descripcion_widget)
+    else:
+      # Si no se encuentra el Insumo, mostrar un mensaje
+      QMessageBox.warning(self, "Insumo no encontrado", "No se encontró un Insumo con el ID especificado.")
+      
 
 #(((((((((((((((((((((((((((((((((((((((((((((((((((((((((PROVEDORES))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+
+
+
 #---------------------------------------REGISTRO de PROVEEDORES en la BASE DE DATOS-----------------------------------------------------
   @Slot()
   def registrar_proveedor(self):
@@ -65,7 +214,7 @@ class MainWindow(QMainWindow):
     if respuesta == QMessageBox.Yes and self.ui.lineEdit_Nombre_Proveedor:
       try:
         #Conectar a la base de datos
-        conn = sqlite3.connect("C:\\Users\\Ale\\Documents\\GitHub\\SPVCM\\DataBase.db")
+        conn = connect_db()
         cursor = conn.cursor()
 
          # Obtener los valores de los campos de entrada
@@ -148,7 +297,7 @@ class MainWindow(QMainWindow):
   def mostrar_proveedor(self):
     try:
         # Conectar a la base de datos
-        conn = sqlite3.connect("C:\\Users\\Ale\\Documents\\GitHub\\SPVCM\\DataBase.db")
+        conn = connect_db()
         cursor = conn.cursor()
 
         # Obtener todos los Proveedores
@@ -208,7 +357,7 @@ class MainWindow(QMainWindow):
     if respuesta == QMessageBox.Yes:
         try:
           # Conectar a la base de datos
-          conn = sqlite3.connect("C:\\Users\\Ale\\Documents\\GitHub\\SPVCM\\DataBase.db")
+          conn = connect_db()
           cursor = conn.cursor()
 
           # Obtener los valores de los campos de entrada
@@ -251,7 +400,7 @@ class MainWindow(QMainWindow):
     if respuesta == QMessageBox.Yes and self.ui.lineEdit_Nombre_Empleado.text():
       try:
         #Conectar a la base de datos
-        conn = sqlite3.connect("C:\\Users\\Ale\\Documents\\GitHub\\SPVCM\\DataBase.db")
+        conn = connect_db()
         cursor = conn.cursor()
 
          # Obtener los valores de los campos de entrada
@@ -337,7 +486,7 @@ class MainWindow(QMainWindow):
   def mostrar_empleados(self):
     try:
         # Conectar a la base de datos
-        conn = sqlite3.connect("C:\\Users\\Ale\\Documents\\GitHub\\SPVCM\\DataBase.db")
+        conn = connect_db()
         cursor = conn.cursor()
 
         # Obtener todos los insumos
@@ -398,7 +547,7 @@ class MainWindow(QMainWindow):
     if respuesta == QMessageBox.Yes:
         try:
           # Conectar a la base de datos
-          conn = sqlite3.connect("C:\\Users\\Ale\\Documents\\GitHub\\SPVCM\\DataBase.db")
+          conn = connect_db()
           cursor = conn.cursor()
 
           # Obtener los valores de los campos de entrada
@@ -442,7 +591,7 @@ class MainWindow(QMainWindow):
       if respuesta == QMessageBox.Yes and self.ui.lineEdit_Nombre_Insumo.text():
           try:
               # Conectar a la base de datos
-              conn = sqlite3.connect("C:\\Users\\Ale\\Documents\\GitHub\\SPVCM\\DataBase.db")
+              conn = connect_db()
               cursor = conn.cursor()
 
               # Obtener los valores de los campos de entrada
@@ -479,7 +628,7 @@ class MainWindow(QMainWindow):
       try:
           id_insumo = self.ui.lineEdit_Buscar_Insumo.text()
           # Conectar a la base de datos
-          conn = sqlite3.connect("C:\\Users\\Ale\\Documents\\GitHub\\SPVCM\\DataBase.db")
+          conn = connect_db()
           cursor = conn.cursor()
 
           # Consulta para obtener los datos del insumo por su ID
@@ -537,7 +686,7 @@ class MainWindow(QMainWindow):
   def mostrar_insumos(self):
       try:
           # Conectar a la base de datos
-          conn = sqlite3.connect("C:\\Users\\Ale\\Documents\\GitHub\\SPVCM\\DataBase.db")
+          conn = connect_db()
           cursor = conn.cursor()
 
           # Obtener todos los insumos
@@ -597,7 +746,7 @@ class MainWindow(QMainWindow):
       if respuesta == QMessageBox.Yes:
         try:
           # Conectar a la base de datos
-          conn = sqlite3.connect("C:\\Users\\Ale\\Documents\\GitHub\\SPVCM\\DataBase.db")
+          conn = connect_db()
           cursor = conn.cursor()
 
           # Obtener los valores de los campos de entrada
@@ -642,6 +791,7 @@ class MainWindow(QMainWindow):
   def navegar_platillos(self):
     self.stackedWidget.setCurrentIndex(2)
     self.ui.tab_Platillos.setCurrentIndex(0)
+    self.ui.pushButton_Agregar_Insumo.hide()
 
     next_id = get_cont_platillos(self)
     next_id += 1
