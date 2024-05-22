@@ -3,6 +3,7 @@ from ui_mainwindow import Ui_MainWindow
 from PySide2.QtCore import Slot
 import sqlite3
 from Metodos import *
+from datetime import datetime
 from PySide2.QtCore import Qt
 
 
@@ -36,6 +37,9 @@ class MainWindow(QMainWindow):
     self.ui.pushButton_Registrar_Platillo.clicked.connect(self.registrar_platillo)
     self.ui.pushButton_Buscar_Insumos_ID.clicked.connect(self.buscar_inusmos_platillo)
     self.ui.pushButton_Agregar_Insumo.clicked.connect(self.agregar_Insumo_Tabla)
+
+    self.ui.pushButton_Buscar_Platillos_Comanda.clicked.connect(self.buscar_platillo_comanda)
+    self.ui.pushButton_Agregar_Platillos_Comanda.clicked.connect(self.agregar_platillo_tabla)
     #BUSQUEDA de datos en la Base de Datos
     self.ui.pushButton_Buscar_Insumo.clicked.connect(self.buscar_insumo)
 
@@ -56,7 +60,129 @@ class MainWindow(QMainWindow):
     self.ui.pushButton_Modificar_Empleado.clicked.connect(self.modificar_empleado)
 
     self.ui.pushButton_Buscar_Proveedor_m.clicked.connect(self.modificar_buscar_proveedor)
-    self.ui.pushButton_Modificar_Proveedor.clicked.connect(self.modificar_proveedor)    
+    self.ui.pushButton_Modificar_Proveedor.clicked.connect(self.modificar_proveedor)  
+
+#(((((((((((((((((((((((((((((((((((((((((((((((((((((((((COMANDAS))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+#---------------------------------------REGISTRO de COMANDAS en la BASE DE DATOS-----------------------------------------------------
+  @Slot()
+  def buscar_platillo_comanda(self): 
+      try:
+          id_platillo = self.ui.lineEdit_ID_Platillo.text()
+          # Conectar a la base de datos
+          platillo = buscar_platillo(self,id_platillo)
+
+          # Mostrar los datos en la tabla
+          if platillo:
+            # Limpiar la labels
+            self.ui.Label_Nombre_Platillo_Comanda.clear()
+            self.ui.Label_Precio_Platillo_Comanda.clear()
+            self.ui.Label_Descripcion_Platillo_Comanda.clear()
+
+            #Mostrar Datos de Insumo en LABELS
+            self.ui.Label_Nombre_Platillo_Comanda.setText(platillo[1])
+            self.ui.Label_Precio_Platillo_Comanda.setText(str(platillo[2]))
+            self.ui.Label_Descripcion_Platillo_Comanda.setText(platillo[3])
+
+            self.ui.pushButton_Agregar_Platillos_Comanda.show()
+          else:
+              # Si no se encuentra el Insumo, mostrar un mensaje
+              QMessageBox.warning(self, "Platillo no encontrado", "No se encontró un Platillo con el ID especificado.")
+
+      except sqlite3.Error as e:
+          # Mostrar un mensaje de error si ocurre un problema
+          QMessageBox.critical(self, "Error", f"Error al buscar el Platillo: {str(e)}")       
+  @Slot()
+  def agregar_platillo_tabla(self):
+    tasa_iva = 0.16
+    id_platillo = self.ui.lineEdit_ID_Platillo.text()
+    # Conectar a la base de datos
+    platillo = buscar_platillo(self,id_platillo)
+
+    # Mostrar los datos en la tabla
+    if platillo:
+      # Mostrar Encabezados en la tabla
+      self.ui.tabla_Platillos.setColumnCount(5) #Config. numero de columnas
+      headers = ["ID", "NOMBRE", "CANTIDAD", "PRECIO", "IMPORTE"]
+      self.ui.tabla_Platillos.setHorizontalHeaderLabels(headers)  #Headers de Columnas
+
+      # Ocultar los números de las filas
+      self.ui.tabla_Platillos.verticalHeader().setVisible(False) 
+
+
+      num_filas = self.ui.tabla_Platillos.rowCount()
+      fila_encontrado = -1
+      cantidad = self.ui.spinBox_Cantidad_Platillo.value()
+      encontrado = False
+      precio = platillo[2]
+      # Buscar ID en la tabla
+      for i in range (num_filas): 
+        id_actual_item = self.ui.tabla_Platillos.item(i,0).text()
+        id_actual = str(id_actual_item)
+        if(id_actual == id_platillo):
+            fila_encontrado = i
+            encontrado = True
+            break
+      if (encontrado): # Si se ecnontro el platillo
+        #obtener cantidad actual 
+        cantidad_actual_item = self.ui.tabla_Platillos.item(fila_encontrado,2)
+        cantidad_actual = itemToFloat(cantidad_actual_item)
+
+        # cantidad a Item
+        nueva_cantidad = cantidad_actual + cantidad
+        importe = nueva_cantidad * precio
+
+        nueva_cantidad_widget = QTableWidgetItem(str(nueva_cantidad))
+        importe_widget = QTableWidgetItem(str(importe))
+
+        nueva_cantidad_widget.setTextAlignment(Qt.AlignCenter)
+        importe_widget.setTextAlignment(Qt.AlignCenter)
+        #Actualizar cantidad
+        self.ui.tabla_Platillos.setItem(fila_encontrado,2,nueva_cantidad_widget)
+        self.ui.tabla_Platillos.setItem(fila_encontrado,4,importe_widget)
+      else:  #Si NO se encontro el ID
+        self.ui.tabla_Platillos.insertRow(num_filas)
+        importe = cantidad * precio
+
+        id_widget = QTableWidgetItem(str(platillo[0]))
+        nombre_widget = QTableWidgetItem(platillo[1])
+        cantidad_widget = QTableWidgetItem(str(cantidad))
+        precio_widget = QTableWidgetItem(str(platillo[2]))
+        importe_widget = QTableWidgetItem(str(importe))
+
+        # Centrar el contenido de las celdas
+        id_widget.setTextAlignment(Qt.AlignCenter)
+        nombre_widget.setTextAlignment(Qt.AlignCenter)
+        cantidad_widget.setTextAlignment(Qt.AlignCenter)
+        precio_widget.setTextAlignment(Qt.AlignCenter)
+        importe_widget.setTextAlignment(Qt.AlignCenter)
+
+        self.ui.tabla_Platillos.setItem(num_filas,0,id_widget)
+        self.ui.tabla_Platillos.setItem(num_filas,1,nombre_widget)
+        self.ui.tabla_Platillos.setItem(num_filas,2,cantidad_widget)
+        self.ui.tabla_Platillos.setItem(num_filas,3,precio_widget)
+        self.ui.tabla_Platillos.setItem(num_filas,4,importe_widget)
+        
+      # ACTUALIZAR LABLES CALCULABLES
+      self.ui.spinBox_Cantidad_Platillo.setValue(0)
+      #calcular SUBTOTAL
+      subtotal=0
+      if not num_filas:
+         subtotal = cantidad * precio
+      for i in range (num_filas): 
+          importe_i_index = self.ui.tabla_Platillos.item(i,4)
+          importe_i= itemToFloat(importe_i_index)
+          subtotal =+ importe_i
+      #calcular IVA
+      iva = subtotal * tasa_iva
+      #calcular TOTAL
+      total = subtotal + iva 
+      self.ui.Subtotal.setText(str(subtotal))
+      self.ui.IVA.setText(str(iva))
+      self.ui.Total.setText(str(total))   
+    else:
+      # Si no se encuentra el Platillo, mostrar un mensaje
+      QMessageBox.warning(self, "Platillo no encontrado", "No se encontró un Insumo con el ID especificado.")
+
 
 #(((((((((((((((((((((((((((((((((((((((((((((((((((((((((PLATILLOS))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 #---------------------------------------REGISTRO de PLATILLOS en la BASE DE DATOS-----------------------------------------------------
@@ -140,7 +266,7 @@ class MainWindow(QMainWindow):
 
       except sqlite3.Error as e:
           # Mostrar un mensaje de error si ocurre un problema
-          QMessageBox.critical(self, "Error", f"Error al buscar el Proveedor: {str(e)}")             
+          QMessageBox.critical(self, "Error", f"Error al buscar el Insumo: {str(e)}")             
   @Slot()
   def agregar_Insumo_Tabla(self):
     id_insumo = self.ui.lineEdit_ID_Insumos_Platillo.text()
@@ -793,6 +919,16 @@ class MainWindow(QMainWindow):
   def navegar_comandas(self):
     self.stackedWidget.setCurrentIndex(1)
     self.ui.tab_Comandas.setCurrentIndex(0)
+    self.ui.pushButton_Agregar_Platillos_Comanda.hide()
+
+    next_id = get_cont_comanda(self)
+    next_id += 1
+    self.ui.ID_Comanda.setText(str(next_id))
+    fecha = datetime.now().date()
+    fecha_actual = fecha.strftime("%d-%m-%Y")
+    self.ui.fecha_comanda.setText(str(fecha_actual))
+
+
   @Slot()
   def navegar_platillos(self):
     self.stackedWidget.setCurrentIndex(2)

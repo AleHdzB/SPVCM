@@ -512,34 +512,6 @@ background-color:rgb(255, 255, 255);
                   <string>Registrar comanda</string>
                  </attribute>
                  <layout class="QGridLayout" name="gridLayout_22">
-                  <item row="0" column="1" colspan="2">
-                   <widget class="QLabel" name="label_Titulo_Registrar_3">
-                    <property name="minimumSize">
-                     <size>
-                      <width>30</width>
-                      <height>30</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>1500</width>
-                      <height>200</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">font: 75 36pt &quot;MS Shell Dlg 2&quot;;</string>
-                    </property>
-                    <property name="lineWidth">
-                     <number>-1</number>
-                    </property>
-                    <property name="text">
-                     <string>Registrar Nueva Comanda</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
                   <item row="1" column="0">
                    <widget class="QLabel" name="label_ID_4">
                     <property name="styleSheet">
@@ -565,81 +537,14 @@ color:rgb(0, 170, 127);</string>
                     </property>
                    </widget>
                   </item>
-                  <item row="1" column="2">
-                   <spacer name="horizontalSpacer_10">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>433</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="1" column="3">
-                   <widget class="QLabel" name="fecha_comanda">
-                    <property name="styleSheet">
-                     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
-text-decoration: underline;
-color:rgb(0, 170, 127);
-</string>
-                    </property>
-                    <property name="text">
-                     <string>dd/mm/aaaa</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="0">
-                   <widget class="QLabel" name="label_109">
-                    <property name="text">
-                     <string>Estatus:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="1">
-                   <widget class="QComboBox" name="comboBox_Estatus_Comanda">
-                    <item>
-                     <property name="text">
-                      <string>Pendiente</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>Pagada</string>
-                     </property>
-                    </item>
-                   </widget>
-                  </item>
                   <item row="3" column="0" rowspan="2" colspan="3">
                    <widget class="QGroupBox" name="groupBox_6">
                     <property name="title">
                      <string/>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_21">
-                     <item row="1" column="4">
-                      <widget class="QPushButton" name="pushButton_Buscar_Platillos_Comanda_2">
-                       <property name="text">
-                        <string>Agregar</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="2" column="0">
-                      <widget class="QLabel" name="label_ID_13">
-                       <property name="styleSheet">
-                        <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
-text-decoration: underline;
-color:rgb(0, 170, 127);
-</string>
-                       </property>
-                       <property name="text">
-                        <string>Precio:</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="1">
-                      <widget class="QLabel" name="ID_Comanda_5">
+                     <item row="4" column="1">
+                      <widget class="QLabel" name="Label_Descripcion_Platillo_Comanda">
                        <property name="styleSheet">
                         <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
 text-decoration: underline;
@@ -650,31 +555,14 @@ color:rgb(0, 170, 127);</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="0" column="1" colspan="3">
-                      <widget class="QLineEdit" name="lineEdit_ID_Insumos_2">
+                     <item row="2" column="4">
+                      <widget class="QPushButton" name="pushButton_Agregar_Platillos_Comanda">
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="placeholderText">
-                        <string>Ingrese el Identificador del platillo</string>
+                        <string>Agregar</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="label_108">
-                       <property name="text">
-                        <string>Platillos:</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="4">
-                      <widget class="QPushButton" name="pushButton_Buscar_Platillos_Comanda">
-                       <property name="text">
-                        <string>Buscar</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="0">
+                     <item row="2" column="0">
                       <widget class="QLabel" name="label_ID_12">
                        <property name="styleSheet">
                         <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
@@ -687,8 +575,11 @@ color:rgb(0, 170, 127);
                        </property>
                       </widget>
                      </item>
+                     <item row="5" column="0" colspan="5">
+                      <widget class="QTableWidget" name="tabla_Platillos"/>
+                     </item>
                      <item row="3" column="1">
-                      <widget class="QLabel" name="ID_Comanda_7">
+                      <widget class="QLabel" name="Label_Precio_Platillo_Comanda">
                        <property name="styleSheet">
                         <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
 text-decoration: underline;
@@ -699,22 +590,7 @@ color:rgb(0, 170, 127);</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="4" column="0" colspan="5">
-                      <widget class="QTableWidget" name="tabla_Buscar_Platillos"/>
-                     </item>
-                     <item row="2" column="1">
-                      <widget class="QLabel" name="ID_Comanda_6">
-                       <property name="styleSheet">
-                        <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
-text-decoration: underline;
-color:rgb(0, 170, 127);</string>
-                       </property>
-                       <property name="text">
-                        <string>-</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="3" column="0">
+                     <item row="4" column="0">
                       <widget class="QLabel" name="label_ID_14">
                        <property name="styleSheet">
                         <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
@@ -727,10 +603,69 @@ color:rgb(0, 170, 127);
                        </property>
                       </widget>
                      </item>
-                     <item row="5" column="2">
-                      <widget class="QPushButton" name="pushButton_Registrar_Platillo_2">
+                     <item row="3" column="0">
+                      <widget class="QLabel" name="label_ID_13">
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);
+</string>
+                       </property>
                        <property name="text">
-                        <string>Registrar nuevo Platillo</string>
+                        <string>Precio:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QLabel" name="Label_Nombre_Platillo_Comanda">
+                       <property name="styleSheet">
+                        <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 170, 127);</string>
+                       </property>
+                       <property name="text">
+                        <string>-</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="4">
+                      <widget class="QPushButton" name="pushButton_Buscar_Platillos_Comanda">
+                       <property name="text">
+                        <string>Buscar</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="2">
+                      <widget class="QPushButton" name="pushButton_Registrar_Comanda">
+                       <property name="text">
+                        <string>Registrar comanda</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="label_108">
+                       <property name="text">
+                        <string>Platillos:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1" colspan="3">
+                      <widget class="QLineEdit" name="lineEdit_ID_Platillo">
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="placeholderText">
+                        <string>Ingrese el Identificador del platillo</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QSpinBox" name="spinBox_Cantidad_Platillo"/>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QLabel" name="label">
+                       <property name="text">
+                        <string>Cantidad:</string>
                        </property>
                       </widget>
                      </item>
@@ -770,7 +705,7 @@ color:rgb(0, 170, 127);
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QLabel" name="ID_Comanda_2">
+                      <widget class="QLabel" name="Subtotal">
                        <property name="styleSheet">
                         <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
 text-decoration: underline;
@@ -782,7 +717,7 @@ color:rgb(0, 170, 127);</string>
                       </widget>
                      </item>
                      <item row="2" column="1">
-                      <widget class="QLabel" name="ID_Comanda_4">
+                      <widget class="QLabel" name="Total">
                        <property name="styleSheet">
                         <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
 text-decoration: underline;
@@ -794,7 +729,7 @@ color:rgb(0, 170, 127);</string>
                       </widget>
                      </item>
                      <item row="1" column="1">
-                      <widget class="QLabel" name="ID_Comanda_3">
+                      <widget class="QLabel" name="IVA">
                        <property name="styleSheet">
                         <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
 text-decoration: underline;
@@ -834,6 +769,68 @@ color:rgb(0, 170, 127);
                     </layout>
                    </widget>
                   </item>
+                  <item row="1" column="2">
+                   <spacer name="horizontalSpacer_10">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>433</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="comboBox_Estatus_Comanda">
+                    <item>
+                     <property name="text">
+                      <string>Pendiente</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Pagada</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="0" column="1" colspan="2">
+                   <widget class="QLabel" name="label_Titulo_Registrar_3">
+                    <property name="minimumSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>1500</width>
+                      <height>200</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 36pt &quot;MS Shell Dlg 2&quot;;</string>
+                    </property>
+                    <property name="lineWidth">
+                     <number>-1</number>
+                    </property>
+                    <property name="text">
+                     <string>Registrar Nueva Comanda</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_109">
+                    <property name="text">
+                     <string>Estatus:</string>
+                    </property>
+                   </widget>
+                  </item>
                   <item row="0" column="0">
                    <spacer name="horizontalSpacer_11">
                     <property name="orientation">
@@ -859,6 +856,19 @@ color:rgb(0, 170, 127);
                      </size>
                     </property>
                    </spacer>
+                  </item>
+                  <item row="1" column="3">
+                   <widget class="QLabel" name="fecha_comanda">
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color:rgb(0, 0, 0);
+</string>
+                    </property>
+                    <property name="text">
+                     <string>dd/mm/aaaa</string>
+                    </property>
+                   </widget>
                   </item>
                  </layout>
                 </widget>

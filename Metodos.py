@@ -18,6 +18,15 @@ def get_cont_insumo(self):
     if max_id is None:
         max_id = 0
     return max_id
+def buscar_platillo(self,id_platillo):
+    # Conectar a la base de datos
+    conn = conn = connect_db()
+    cursor = conn.cursor()
+
+    # Consulta para obtener los datos del insumo por su ID
+    cursor.execute("SELECT * FROM Platillo WHERE id = ?", (id_platillo,))
+    platillo = cursor.fetchone()  # Obtener el primer resultado
+    return platillo
 
 def buscar_insumo(self,id_insumo):
     # Conectar a la base de datos
@@ -77,6 +86,16 @@ def get_cont_platillos(self):
 
     # Ejecuta la consulta para obtener el ID máximo
     cursor.execute("SELECT MAX(id) FROM Platillo")
+    max_id = cursor.fetchone()[0]  # Obtiene el valor del ID máximo
+    if max_id is None:
+        max_id = 0
+    return max_id
+def get_cont_comanda(self):
+    conn = conn = connect_db()
+    cursor = conn.cursor()
+
+    # Ejecuta la consulta para obtener el ID máximo
+    cursor.execute("SELECT MAX(id) FROM Comanda")
     max_id = cursor.fetchone()[0]  # Obtiene el valor del ID máximo
     if max_id is None:
         max_id = 0
