@@ -28,6 +28,16 @@ def buscar_platillo(self,id_platillo):
     platillo = cursor.fetchone()  # Obtener el primer resultado
     return platillo
 
+def buscar_comanda(self,id_comanda):
+    # Conectar a la base de datos
+    conn = conn = connect_db()
+    cursor = conn.cursor()
+
+    # Consulta para obtener los datos del insumo por su ID
+    cursor.execute("SELECT * FROM Comanda WHERE id = ?", (id_comanda,))
+    comanda = cursor.fetchone()  # Obtener el primer resultado
+    return comanda
+
 def buscar_insumo(self,id_insumo):
     # Conectar a la base de datos
     conn = conn = connect_db()

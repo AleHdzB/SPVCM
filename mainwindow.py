@@ -38,20 +38,30 @@ class MainWindow(QMainWindow):
     self.ui.pushButton_Buscar_Insumos_ID.clicked.connect(self.buscar_inusmos_platillo)
     self.ui.pushButton_Agregar_Insumo.clicked.connect(self.agregar_Insumo_Tabla)
 
+    self.ui.pushButton_Registrar_Comanda.clicked.connect(self.registrar_comanda)
     self.ui.pushButton_Buscar_Platillos_Comanda.clicked.connect(self.buscar_platillo_comanda)
     self.ui.pushButton_Agregar_Platillos_Comanda.clicked.connect(self.agregar_platillo_tabla)
+    
     #BUSQUEDA de datos en la Base de Datos
     self.ui.pushButton_Buscar_Insumo.clicked.connect(self.buscar_insumo)
 
     self.ui.pushButton_Buscar_Empleado.clicked.connect(self.buscar_empleado)
 
     self.ui.pushButton_Buscar_Proveedor.clicked.connect(self.buscar_proveedor)
+
+      #ENTIDADES 1 *N
+    self.ui.pushButton_Buscar_Platillo.clicked.connect(self.buscar_platillo)
+
+    self.ui.pushButton_Buscar_Comanda.clicked.connect(self.buscar_comanda)
     #CONSULTAR datos en la Base de Datos
     self.ui.pushButton_Mostrar_Insumos.clicked.connect(self.mostrar_insumos)
     
     self.ui.pushButton_Mostrar_Proveedor.clicked.connect(self.mostrar_proveedor)
 
     self.ui.pushButton_Mostrar_Empleado.clicked.connect(self.mostrar_empleados)
+
+      #ENTIDADES 1 *N
+    self.ui.pushButton_Mostrar_Platillos.clicked.connect(self.mostrar_platillos)
     #MODIFICAR datos en la Base de Datos
     self.ui.pushButton_Buscar_Insum_2.clicked.connect(self.modificar_buscar_inusmo)
     self.ui.pushButton_Modificar_Inusmo.clicked.connect(self.modificar_inusmo)
@@ -64,6 +74,66 @@ class MainWindow(QMainWindow):
 
 #(((((((((((((((((((((((((((((((((((((((((((((((((((((((((COMANDAS))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 #---------------------------------------REGISTRO de COMANDAS en la BASE DE DATOS-----------------------------------------------------
+  @Slot()
+  def registrar_comanda(self):
+    # Mostrar un mensaje de confirmación
+    respuesta = QMessageBox.question(self, "Confirmar registro", "¿Desea registrar la Comanda?",
+                                      QMessageBox.Yes | QMessageBox.No)
+    
+    if respuesta == QMessageBox.Yes and self.ui.tabla_Platillos.rowCount:
+      try:
+        #Conectar a la base de datos
+        conn = connect_db()
+        cursor = conn.cursor()
+
+        # Obtener los valores de los campos de entrada
+        estatus = self.ui.comboBox_Estatus_Comanda.currentText()
+        fecha = self.ui.fecha_comanda.text()
+        # Insertar los valores en la tabla Insumo
+        cursor.execute("INSERT INTO Comanda (estatus, fecha) VALUES (?, ?)", 
+                      (estatus, fecha))
+        # Confirmar la inserción
+        conn.commit()
+#INSERT EN TABLA 1 a *
+        id_comanda = int(self.ui.ID_Comanda.text())
+        
+        num_filas = self.ui.tabla_Platillos.rowCount()
+        for i in range(num_filas):
+          id_platillo = itemToInt(self.ui.tabla_Platillos.item(i,0))
+          cantidad = itemToFloat(self.ui.tabla_Platillos.item(i,2))
+          precio = itemToFloat(self.ui.tabla_Platillos.item(i,3))
+          
+          cursor.execute("INSERT INTO Platillo_Comanda (id_platillo, id_comanda, cantidad, precio) VALUES (?, ?, ?, ?)", 
+                  (id_platillo, id_comanda, cantidad, precio))
+          conn.commit()
+          
+        # Mostrar un mensaje de éxito
+        QMessageBox.information(self, "Registro exitoso", "La COMANDA se ha registrado correctamente.")        
+
+      except sqlite3.Error as e:
+          # Mostrar un mensaje de error si ocurre un problema
+          QMessageBox.critical(self, "Error", f"Error al registrar la Comanda: {str(e)}")
+      finally:
+          # Cerrar la conexión a la base de datos
+          conn.close()
+          self.ui.Label_Nombre_Platillo_Comanda.clear()
+          self.ui.Label_Precio_Platillo_Comanda.clear()
+          self.ui.Label_Descripcion_Platillo_Comanda.clear()
+          self.ui.lineEdit_ID_Platillo.clear()
+
+          self.ui.tabla_Platillos.clear()
+          self.ui.tabla_Platillos.setRowCount(0)
+          self.ui.tabla_Platillos.setColumnCount(0)
+
+          self.ui.Subtotal.clear()
+          self.ui.IVA.clear()
+          self.ui.Total.clear()
+          
+          #self.ui.ID_Comanda.setText(str(get_cont_comanda(self)+1))
+
+    else:
+      if respuesta != QMessageBox.No:
+          QMessageBox.critical(self, "Error", "No hay informacion suficiente para registrar el Platillo .")
   @Slot()
   def buscar_platillo_comanda(self): 
       try:
@@ -161,27 +231,99 @@ class MainWindow(QMainWindow):
         self.ui.tabla_Platillos.setItem(num_filas,2,cantidad_widget)
         self.ui.tabla_Platillos.setItem(num_filas,3,precio_widget)
         self.ui.tabla_Platillos.setItem(num_filas,4,importe_widget)
+
+        num_filas += 1
         
       # ACTUALIZAR LABLES CALCULABLES
       self.ui.spinBox_Cantidad_Platillo.setValue(0)
       #calcular SUBTOTAL
-      subtotal=0
+      subtotal = 0
       if not num_filas:
          subtotal = cantidad * precio
       for i in range (num_filas): 
           importe_i_index = self.ui.tabla_Platillos.item(i,4)
           importe_i= itemToFloat(importe_i_index)
-          subtotal =+ importe_i
+          subtotal += importe_i
       #calcular IVA
       iva = subtotal * tasa_iva
       #calcular TOTAL
       total = subtotal + iva 
-      self.ui.Subtotal.setText(str(subtotal))
-      self.ui.IVA.setText(str(iva))
-      self.ui.Total.setText(str(total))   
+
+      self.ui.Subtotal.setText(str(round(subtotal,2)))
+      self.ui.IVA.setText(str(round(iva,2)))
+      self.ui.Total.setText(str(round(total,2)))   
     else:
       # Si no se encuentra el Platillo, mostrar un mensaje
       QMessageBox.warning(self, "Platillo no encontrado", "No se encontró un Insumo con el ID especificado.")
+
+
+#---------------------------------------BUSCAR de COMANDASen la BASE DE DATOS-----------------------------------------------------
+  @Slot()
+  def buscar_comanda(self):
+        try:
+            id_comanda = self.ui.lineEdit_ID_Buscar_Comanda.text()
+            # Conectar a la base de datos
+            comanda = buscar_comanda(self,id_comanda)
+            tasa_iva = 0.16
+
+            # Mostrar los datos en la tabla
+            if comanda:
+              self.ui.fecha_buscar_comadna.setText(comanda[2])
+              # Limpiar la tabla
+              self.ui.Label_Estatus_Comanda_Buscar.clear()
+              
+              self.ui.tabla_Buscar_Platillos.clear()
+              self.ui.tabla_Buscar_Platillos.setRowCount(0)
+              self.ui.tabla_Buscar_Platillos.setColumnCount(0)
+
+              # Mostrar los datos de la COMANDA en la tabla
+              self.ui.Esatus_Platillo.setText(comanda[1])
+
+              #Obtener PLATILLOS
+              conn = connect_db()
+              cursor = conn.cursor()
+              cursor.execute(
+              """SELECT P.id, P.nombre, PC.cantidad, PC.precio 
+                FROM Platillo P
+                JOIN Platillo_Comanda PC ON P.id = PC.id_platillo
+                JOIN Comanda  C ON PC.id_comanda = C.id
+                WHERE C.id = ?;""", (id_comanda))
+              platillos = cursor.fetchall()
+              conn.close()
+
+              headers = ["ID", "NOMBRE", "CANTIDAD", "PRECIO", "IMPORTE"]
+              self.ui.tabla_Buscar_Platillos.setColumnCount(len(headers)) #Config. numero de columnas
+              self.ui.tabla_Buscar_Platillos.setHorizontalHeaderLabels(headers)  #Headers de Columnas
+            
+              # Ocultar los números de las filas
+              self.ui.tabla_Buscar_Platillos.verticalHeader().setVisible(False)
+
+              subtotal=0
+
+              for i, platillo in enumerate(platillos):
+                  self.ui.tabla_Buscar_Platillos.insertRow(i)
+                  for j, valor in enumerate(platillo):
+                      item = QTableWidgetItem(str(valor))
+                      item.setTextAlignment(Qt.AlignCenter)  # Centrar el texto en la celda
+                      self.ui.tabla_Buscar_Platillos.setItem(i,j,item)
+                  importe = platillo[2]* platillo[3]
+                  importe_item = QTableWidgetItem(str(importe))
+                  self.ui.tabla_Buscar_Platillos.setItem(i,4,importe_item)
+                  subtotal += importe
+              for i in range(self.ui.tabla_Buscar_Platillos.columnCount()):
+                self.ui.tabla_Buscar_Platillos.resizeColumnToContents(i)
+              iva = round(subtotal*tasa_iva,2)
+              total = round(subtotal + iva,2)
+              self.ui.Subtotal_2.setText(str(round(subtotal,2)))
+              self.ui.IVA_2.setText(str(iva))
+              self.ui.Total_2.setText(str(total))
+            else:
+              # Si no se encuentra el Empleado, mostrar un mensaje
+              QMessageBox.warning(self, "Comanda no encontrada", "No se encontró una Comanda con el ID especificado.")
+
+        except sqlite3.Error as e:
+            # Mostrar un mensaje de error si ocurre un problema
+            QMessageBox.critical(self, "Error", f"Error al buscar la Comanda: {str(e)}")
 
 
 #(((((((((((((((((((((((((((((((((((((((((((((((((((((((((PLATILLOS))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
@@ -214,7 +356,7 @@ class MainWindow(QMainWindow):
         num_filas = self.ui.tabla_Buscar_Insumos_Platillo.rowCount()
         for i in range(num_filas):
           id_insumo = itemToInt(self.ui.tabla_Buscar_Insumos_Platillo.item(i,0))
-          cantidad = itemToFloat(self.ui.tabla_Buscar_Insumos_Platillo.item(i,0))
+          cantidad = itemToFloat(self.ui.tabla_Buscar_Insumos_Platillo.item(i,2))
           
           cursor.execute("INSERT INTO Insumos_Platillo (id_insumo, id_platillo, cantidad) VALUES (?, ?, ?)", 
                   (id_insumo, id_platillo ,cantidad))
@@ -225,14 +367,13 @@ class MainWindow(QMainWindow):
 
       except sqlite3.Error as e:
           # Mostrar un mensaje de error si ocurre un problema
-          QMessageBox.critical(self, "Error", f"Error al registrar el Proveedor: {str(e)}")
+          QMessageBox.critical(self, "Error", f"Error al registrar el Platillo: {str(e)}")
       finally:
           # Cerrar la conexión a la base de datos
           conn.close()
           self.ui.lineEdit_Nombre_Platillo.clear()
           self.ui.SpinBox_Precio_Platillo.clear()
           self.ui.lineEdit_Descripcion_Platillo.clear()
-          self.ui.comboBox_Estatus_Platillo.clear()
           self.ui.lineEdit_ID_Insumos_Platillo.clear()
           self.ui.Label_Nombre_Insumo.clear()
           self.ui.Label_Descripcion_Insumo.clear()
@@ -242,7 +383,7 @@ class MainWindow(QMainWindow):
 
     else:
       if respuesta != QMessageBox.No:
-          QMessageBox.critical(self, "Error", "No hay informacion suficiente paraq registrar el Platillo .")
+          QMessageBox.critical(self, "Error", "No hay informacion suficiente para registrar el Platillo .")
   @Slot()
   def buscar_inusmos_platillo(self): 
       try:
@@ -327,10 +468,112 @@ class MainWindow(QMainWindow):
         self.ui.tabla_Buscar_Insumos_Platillo.setItem(num_filas,1,nombre_widget)
         self.ui.tabla_Buscar_Insumos_Platillo.setItem(num_filas,2,cantidad_widget)
         self.ui.tabla_Buscar_Insumos_Platillo.setItem(num_filas,3,descripcion_widget)
+      self.ui.SpinBox_Cantidad_Insumo.setValue(0)
     else:
       # Si no se encuentra el Insumo, mostrar un mensaje
       QMessageBox.warning(self, "Insumo no encontrado", "No se encontró un Insumo con el ID especificado.")
-      
+#---------------------------------------BUSCAR de PLATILLOS en la BASE DE DATOS-----------------------------------------------------
+  @Slot()
+  def buscar_platillo(self):
+      try:
+          id_platillo = self.ui.lineEdit_ID_Buscar_Platillo.text()
+          # Conectar a la base de datos
+          platillo = buscar_platillo(self,id_platillo)
+
+          # Mostrar los datos en la tabla
+          if platillo:
+            # Limpiar la tabla
+            self.ui.Nombre_Platillo.clear()
+            self.ui.Precio_Platillo.clear()
+            self.ui.Descripcion_Platillo.clear()
+            self.ui.Esatus_Platillo.clear()
+            
+            self.ui.tabla_Buscar_Insumos_Platillo_2.clearContents()
+
+            # Mostrar los datos del Proveedor en la tabla
+            self.ui.Nombre_Platillo.setText(platillo[1])
+            self.ui.Precio_Platillo.setText(str(platillo[2]))
+            self.ui.Descripcion_Platillo.setText(platillo[3])
+            self.ui.Esatus_Platillo.setText(platillo[4])
+
+            #Obtener INSUMOS del
+            conn = connect_db()
+            cursor = conn.cursor()
+            cursor.execute(
+            """SELECT I.id, I.nombre, IP.cantidad
+                FROM Insumo I
+                JOIN Insumos_Platillo IP ON I.id = IP.id_insumo
+                JOIN Platillo P ON IP.id_platillo = P.id
+                WHERE P.id = ? """, (id_platillo))
+            insumos = cursor.fetchall()
+            conn.close()
+
+            
+            self.ui.tabla_Buscar_Insumos_Platillo_2.setColumnCount(3) #Config. numero de columnas
+            headers = ["ID", "NOMBRE", "CANTIDAD"]
+            self.ui.tabla_Buscar_Insumos_Platillo_2.setHorizontalHeaderLabels(headers)  #Headers de Columnas
+          
+            # Ocultar los números de las filas
+            self.ui.tabla_Buscar_Insumos_Platillo_2.verticalHeader().setVisible(False)
+
+
+            for i, insumo in enumerate(insumos):
+                self.ui.tabla_Buscar_Insumos_Platillo_2.insertRow(i)
+                for j, valor in enumerate(insumo):
+                    item = QTableWidgetItem(str(valor))
+                    item.setTextAlignment(Qt.AlignCenter)  # Centrar el texto en la celda
+                    self.ui.tabla_Buscar_Insumos_Platillo_2.setItem(i,j,item)        
+            for i in range(self.ui.tabla_Buscar_Insumos_Platillo_2.columnCount()):
+              self.ui.tabla_Buscar_Insumos_Platillo_2.resizeColumnToContents(i)
+          else:
+              # Si no se encuentra el Empleado, mostrar un mensaje
+              QMessageBox.warning(self, "Platillo no encontrado", "No se encontró un Platillo con el ID especificado.")
+
+      except sqlite3.Error as e:
+          # Mostrar un mensaje de error si ocurre un problema
+          QMessageBox.critical(self, "Error", f"Error al buscar el Platillo: {str(e)}")
+
+#---------------------------------------CONSULTAR de PLATILLOS en la BASE DE DATOS-----------------------------------------------------
+  @Slot()
+  def mostrar_platillos(self):
+    try:
+        # Conectar a la base de datos
+        conn = connect_db()
+        cursor = conn.cursor()
+
+        # Obtener todos los Platillos
+        cursor.execute("SELECT * FROM Platillo")
+        platillos = cursor.fetchall()
+
+        self.ui.tabla_Consultar_Platillos.clearContents()
+        # Mostrar los Platillos en la tabla
+        self.ui.tabla_Consultar_Platillos.setRowCount(len(platillos))
+        headers = ["ID","NOMBRE","PRECIO","DESCRIPCION","ESTATUS"]
+        self.ui.tabla_Consultar_Platillos.setColumnCount(len(headers))
+        self.ui.tabla_Consultar_Platillos.setHorizontalHeaderLabels(headers)
+        self.ui.tabla_Consultar_Platillos.verticalHeader().setVisible(False)
+        # Ajustar el tamaño de los encabezados al contenido
+        header = self.ui.tabla_Consultar_Platillos.horizontalHeader()
+        header.setSectionResizeMode(QHeaderView.ResizeToContents)
+        for i, platillo in enumerate(platillos):
+            for j, valor in enumerate(platillo):
+                item = QTableWidgetItem(str(valor))
+                item.setTextAlignment(Qt.AlignCenter)  # Centrar el texto en la celda
+                self.ui.tabla_Consultar_Platillos.setItem(i, j, item)
+                    # Ajustar el ancho de las columnas al contenido
+            for i in range(self.ui.tabla_Buscar_Platillos.columnCount()):
+                self.ui.tabla_Buscar_Platillos.resizeColumnToContents(i)
+
+    except sqlite3.Error as e:
+        # Mostrar un mensaje de error si ocurre un problema
+        QMessageBox.critical(self, "Error", f"Error al mostrar los Platillos: {str(e)}")
+    finally:
+        # Cerrar la conexión a la base de datos
+        conn.close()
+
+#---------------------------------------MODIFICAR de PLATILLOS en la BASE DE DATOS-----------------------------------------------------
+
+
 
 #(((((((((((((((((((((((((((((((((((((((((((((((((((((((((PROVEDORES))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 
@@ -452,7 +695,8 @@ class MainWindow(QMainWindow):
                 item.setTextAlignment(Qt.AlignCenter)  # Centrar el texto en la celda
                 self.ui.tabla_Consultar_Proveedor.setItem(i, j, item)
                     # Ajustar el ancho de las columnas al contenido
-
+            for i in range(self.ui.tabla_Buscar_Proveedor.columnCount()):
+                self.ui.tabla_Buscar_Proveedor.resizeColumnToContents(i)
 
     except sqlite3.Error as e:
         # Mostrar un mensaje de error si ocurre un problema
@@ -927,6 +1171,8 @@ class MainWindow(QMainWindow):
     fecha = datetime.now().date()
     fecha_actual = fecha.strftime("%d-%m-%Y")
     self.ui.fecha_comanda.setText(str(fecha_actual))
+    index = self.ui.tab_Comandas.indexOf(self.ui.ConsultarComanda)
+    self.ui.tab_Comandas.removeTab(index)
 
 
   @Slot()
@@ -943,6 +1189,11 @@ class MainWindow(QMainWindow):
   def navegar_compras(self):
     self.stackedWidget.setCurrentIndex(3)
     self.ui.tab_Compras.setCurrentIndex(0)
+
+    index_consulta = self.ui.tab_Compras.indexOf(self.ui.ConsultarCompra)
+    self.ui.tab_Compras.removeTab(index_consulta)
+    index_mod = self.ui.tab_Compras.indexOf(self.ui.ModificarCompra)
+    self.ui.tab_Compras.removeTab(index_mod)
   @Slot()
   def navegar_insumos(self):
     self.stackedWidget.setCurrentIndex(4)
