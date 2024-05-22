@@ -378,6 +378,8 @@ class MainWindow(QMainWindow):
           self.ui.Label_Nombre_Insumo.clear()
           self.ui.Label_Descripcion_Insumo.clear()
           self.ui.SpinBox_Cantidad_Insumo.clear()
+          self.ui.tabla_Buscar_Insumos_Platillo.clear()
+          self.ui.tabla_Buscar_Insumos_Platillo.setColumnCount(0)
           self.ui.tabla_Buscar_Insumos_Platillo.setRowCount(0)
           self.ui.ID_Platillo.setText(str(get_cont_platillos(self)+1))
 
@@ -489,6 +491,8 @@ class MainWindow(QMainWindow):
             self.ui.Esatus_Platillo.clear()
             
             self.ui.tabla_Buscar_Insumos_Platillo_2.clearContents()
+            self.ui.tabla_Buscar_Insumos_Platillo_2.setRowCount(0)
+            self.ui.tabla_Buscar_Insumos_Platillo_2.setColumnCount(0)
 
             # Mostrar los datos del Proveedor en la tabla
             self.ui.Nombre_Platillo.setText(platillo[1])
@@ -1026,7 +1030,7 @@ class MainWindow(QMainWindow):
 
             id_widget = QTableWidgetItem(str(insumo[0]))
             nombre_widget = QTableWidgetItem(insumo[1])
-            existencia_widget = QTableWidgetItem(str(insumo[2]))
+            existencia_widget = QTableWidgetItem(str(round(insumo[2],2)))
             descripcion_widget = QTableWidgetItem(insumo[3])
 
             # Centrar el contenido de las celdas
@@ -1081,6 +1085,8 @@ class MainWindow(QMainWindow):
           header.setSectionResizeMode(QHeaderView.ResizeToContents)
           for i, insumo in enumerate(insumos):
               for j, valor in enumerate(insumo):
+                  if j == 2:
+                     valor = round(valor,2)
                   item = QTableWidgetItem(str(valor))
                   item.setTextAlignment(Qt.AlignCenter)  # Centrar el texto en la celda
                   self.ui.tabla_Consultar_Insumo.setItem(i, j, item)
